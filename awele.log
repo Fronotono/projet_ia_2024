@@ -1,6 +1,6 @@
-M√©moire totale : 1,8 GiB
+MÈmoire totale : 1,8 GiB
 Instanciation du bot "Random"
-7 classes ont √©t√© trouv√©es
+7 classes ont ÈtÈ trouvÈes
 class awele.bot.demo.first.FirstBot
 class awele.bot.demo.random.RandomBot
 class awele.bot.random.RandomBot
@@ -15,9 +15,9 @@ Instanciation du bot "First"
 Nom du bot : First
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.000
-Dur√©e d'une prise de d√©cision : 00:00:00.000
-Usage m√©moire : 0 B
-Usage m√©moire maximum : 374,0 KiB
+DurÈe d'une prise de dÈcision : 00:00:00.000
+Usage mÈmoire : 0 B
+Usage mÈmoire maximum : 390,0 KiB
 
 Bot 2/7
 Classe : awele.bot.demo.random.RandomBot
@@ -25,9 +25,9 @@ Instanciation du bot "Random"
 Nom du bot : Random
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.000
-Dur√©e d'une prise de d√©cision : 00:00:00.000
-Usage m√©moire : 592 B
-Usage m√©moire maximum : 390,0 KiB
+DurÈe d'une prise de dÈcision : 00:00:00.000
+Usage mÈmoire : 592 B
+Usage mÈmoire maximum : 390,1 KiB
 
 Bot 3/7
 Classe : awele.bot.random.RandomBot
@@ -35,9 +35,9 @@ Instanciation du bot "Random"
 Nom du bot : Random
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.000
-Dur√©e d'une prise de d√©cision : 00:00:00.000
-Usage m√©moire : 600 B
-Usage m√©moire maximum : 390,1 KiB
+DurÈe d'une prise de dÈcision : 00:00:00.000
+Usage mÈmoire : 600 B
+Usage mÈmoire maximum : 390,1 KiB
 
 Bot 4/7
 Classe : awele.bot.demo.last.LastBot
@@ -45,9 +45,9 @@ Instanciation du bot "Last"
 Nom du bot : Last
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.000
-Dur√©e d'une prise de d√©cision : 00:00:00.000
-Usage m√©moire : 592 B
-Usage m√©moire maximum : 406,1 KiB
+DurÈe d'une prise de dÈcision : 00:00:00.000
+Usage mÈmoire : 592 B
+Usage mÈmoire maximum : 406,1 KiB
 
 Bot 5/7
 Classe : awele.bot.demo.minmax.MinMaxBot
@@ -55,9 +55,9 @@ Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.000
-Dur√©e d'une prise de d√©cision : 00:00:00.131
-Usage m√©moire : 1,5 KiB
-Usage m√©moire maximum : 30,0 MiB
+DurÈe d'une prise de dÈcision : 00:00:00.082
+Usage mÈmoire : 1,5 KiB
+Usage mÈmoire maximum : 69,0 MiB
 
 Bot 6/7
 Classe : awele.bot.demo.knn2.Knn2Bot
@@ -65,7 +65,7 @@ Instanciation du bot "k-NN2"
 Nom du bot : k-NN2
 Auteur(s) : Alexandre Blansch√©
 Temps d'apprentissage : 00:00:00.006
-Bot "awele.bot.demo.knn2.Knn2Bot" disqualifi√© : ne peut pas √™tre instanci√©
+Bot "awele.bot.demo.knn2.Knn2Bot" disqualifiÈ : ne peut pas Ítre instanciÈ
 java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 0
 
 Bot 7/7
@@ -73,39 +73,39 @@ Classe : awele.bot.demo.knn1.Knn1Bot
 Instanciation du bot "k-NN1"
 Nom du bot : k-NN1
 Auteur(s) : Alexandre Blansch√©
-Temps d'apprentissage : 00:00:00.002
-Bot "awele.bot.demo.knn1.Knn1Bot" disqualifi√© : ne peut pas √™tre instanci√©
+Temps d'apprentissage : 00:00:00.003
+Bot "awele.bot.demo.knn1.Knn1Bot" disqualifiÈ : ne peut pas Ítre instanciÈ
 java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 0
 
-5 bots ont √©t√© instanci√©s
-Dur√©e du chargement : 00:00:05.281
-M√©moire utilis√©e : 3,7 MiB
+5 bots ont ÈtÈ instanciÈs
+DurÈe du chargement : 00:00:04.115
+MÈmoire utilisÈe : 3,7 MiB
 
 Que le championnat commence !
 
 Affrontement 1/10
 First vs. Random
-Score : 1.78 - 1.21
-First a gagn√©
-Nombre de coups jou√©s : 156.54 par match
-Dur√©e : 00:00:00.000 par match
-M√©moire utilis√©e : 3,7 MiB
+Score : 1.55 - 1.43
+First a gagnÈ
+Nombre de coups jouÈs : 153.84 par match
+DurÈe : 00:00:00.000 par match
+MÈmoire utilisÈe : 3,7 MiB
 
 Affrontement 2/10
 First vs. Random
-Score : 1.61 - 1.37
-First a gagn√©
-Nombre de coups jou√©s : 154.095 par match
-Dur√©e : 00:00:00.000 par match
-M√©moire utilis√©e : 3,7 MiB
+Score : 1.65 - 1.32
+First a gagnÈ
+Nombre de coups jouÈs : 154.335 par match
+DurÈe : 00:00:00.000 par match
+MÈmoire utilisÈe : 3,7 MiB
 
 Affrontement 3/10
 First vs. Last
 Score : 0.0 - 3.0
-Last a gagn√©
-Nombre de coups jou√©s : 291.5 par match
-Dur√©e : 00:00:00.000 par match
-M√©moire utilis√©e : 3,8 MiB
+Last a gagnÈ
+Nombre de coups jouÈs : 291.5 par match
+DurÈe : 00:00:00.000 par match
+MÈmoire utilisÈe : 3,8 MiB
 
 Affrontement 4/10
 First vs. MinMax
