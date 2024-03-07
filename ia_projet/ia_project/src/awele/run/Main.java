@@ -22,7 +22,7 @@ import awele.output.StandardOutput;
 import javassist.Modifier;
 
 /**
- * @author Alexandre BlanschÃ©
+ * @author Alexandre Blansché
  * Programme principal
  */
 public final class Main extends OutputWriter
@@ -32,14 +32,18 @@ public final class Main extends OutputWriter
     private static Main instance = null;
     private static final String LOG_FILE = "awele.log";
     private static final String ANONYMOUS_LOG_FILE = "awele.anonymous.log";
-    // Pour l'Ã©valuation, seuls les bots des Ã©tudiants (CompetitorBot) sont mis en compÃ©tition
+    // Pour l'évaluation, seuls les bots des étudiants (CompetitorBot) sont mis en compétition
     private static final Tournament TOURNAMENT = Tournament.ALL;
     //private static final Tournament TOURNAMENT = Tournament.COMPETITORS;
     //private static final Tournament TOURNAMENT = Tournament.CHAMPIONS;
     private static final int NB_RUNS = 100;
     //private static final int NB_RUNS = 1;
     private static final int MAX_LEARNING_TIME = 1000 * 60 * 60 * 1; // 1 h
+<<<<<<< HEAD
     private static final int MAX_DECISION_TIME = 100; // 200 ms
+=======
+    private static final int MAX_DECISION_TIME = 100; // 100 ms
+>>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
     private static final int MAX_MEMORY = 1024 * 1024 * 64; // 64 MiB
     private static final int MAX_TOTAL_MEMORY = 1024 * 1024 * 1024; // 1 GiB
 
@@ -79,8 +83,7 @@ public final class Main extends OutputWriter
     
     private void printDisqual (String botName, String cause)
     {
-        this.print ("Bot \"" + botName + "\" disqualifiÃ© : " + cause);
-        
+        this.print ("Bot \"" + botName + "\" disqualifié : " + cause);
     }
     
     private static long getUsedMemory ()
@@ -92,7 +95,7 @@ public final class Main extends OutputWriter
     {
         long startLoading = System.currentTimeMillis ();
         long heapMaxSize = Runtime.getRuntime().maxMemory();
-        this.print ("MÃ©moire totale : "+ Main.formatMemory (heapMaxSize));
+        this.print ("Mémoire totale : "+ Main.formatMemory (heapMaxSize));
         RandomBot random = null;
         try
         {
@@ -152,7 +155,7 @@ public final class Main extends OutputWriter
         			subClasses.add (subClass);
         	}
         }
-        this.print (subClasses.size () + " classes ont Ã©tÃ© trouvÃ©es");
+        this.print (subClasses.size () + " classes ont été trouvées");
         for (Class <? extends Bot> botClass: subClasses)
         	this.print (botClass);
         this.print ();
@@ -185,9 +188,9 @@ public final class Main extends OutputWriter
                         Awele awele = new Awele (bot, random);
                         awele.play ();
                         long decisionTime = (long) ((2 * awele.getRunningTime ()) / awele.getNbMoves ()) - randomAverageDecisionTime;
-                        this.print ("DurÃ©e d'une prise de dÃ©cision : " + Main.formatDuration (decisionTime));
+                        this.print ("Durée d'une prise de décision : " + Main.formatDuration (decisionTime));
                         if (decisionTime > Main.MAX_DECISION_TIME)
-                            this.printDisqual (bot.getName (), "durÃ©e d'une prise de dÃ©cision trop long");
+                            this.printDisqual (bot.getName (), "durée d'une prise de décision trop long");
                         else
                         {
                             long memoryAfter = Main.getUsedMemory ();
@@ -195,10 +198,10 @@ public final class Main extends OutputWriter
                             long totalUsedMemory = Math.max (0, memoryAfter - memoryBefore);
                             memoryAfter = Main.getUsedMemory ();
                             long usedMemory = Math.max (0, memoryAfter - memoryBefore);
-                            this.print ("Usage mÃ©moire : " + Main.formatMemory (usedMemory));
-                            this.print ("Usage mÃ©moire maximum : " + Main.formatMemory (totalUsedMemory));
+                            this.print ("Usage mémoire : " + Main.formatMemory (usedMemory));
+                            this.print ("Usage mémoire maximum : " + Main.formatMemory (totalUsedMemory));
                             if ((usedMemory > Main.MAX_MEMORY) || (totalUsedMemory > Main.MAX_TOTAL_MEMORY))
-                                this.printDisqual (bot.getName (), "volume mÃ©moire trop important");
+                                this.printDisqual (bot.getName (), "volume mémoire trop important");
                             else
                                 this.bots.add (bot);
                         }
@@ -208,17 +211,17 @@ public final class Main extends OutputWriter
             }
             catch (Exception e)
             {
-                this.printDisqual (subClass.getName (), "ne peut pas Ãªtre instanciÃ©");
+                this.printDisqual (subClass.getName (), "ne peut pas être instancié");
                 this.print (e);
                 e.printStackTrace();
                 this.print ();
             }
         }
-        this.print (this.bots.size () + " bots ont Ã©tÃ© instanciÃ©s");
+        this.print (this.bots.size () + " bots ont été instanciés");
         System.gc ();
         long endLoading = System.currentTimeMillis ();
-        this.print ("DurÃ©e du chargement : " + Main.formatDuration (endLoading - startLoading));
-        this.print ("MÃ©moire utilisÃ©e : "+ Main.formatMemory (Main.getUsedMemory ()));
+        this.print ("Durée du chargement : " + Main.formatDuration (endLoading - startLoading));
+        this.print ("Mémoire utilisée : "+ Main.formatMemory (Main.getUsedMemory ()));
     }
     
     private void tournament ()
@@ -270,21 +273,21 @@ public final class Main extends OutputWriter
                 runningTime /=  Main.NB_RUNS;
                 this.print ("Score : " + localPoints [0] + " - " + localPoints [1]);
                 if (localPoints [0] == localPoints [1])
-                    this.print ("Ã‰galitÃ©");
+                    this.print ("Égalité");
                 else if (localPoints [0] > localPoints [1])
-                    this.print (this.bots.get (i).getName () + " a gagnÃ©");
+                    this.print (this.bots.get (i).getName () + " a gagné");
                 else
-                    this.print (this.bots.get (j).getName () + " a gagnÃ©");
+                    this.print (this.bots.get (j).getName () + " a gagné");
                 points [i] += localPoints [0];
                 points [j] += localPoints [1];
-                this.print ("Nombre de coups jouÃ©s : " + nbMoves + " par match");
-                this.print ("DurÃ©e : " + Main.formatDuration (runningTime) + " par match");
+                this.print ("Nombre de coups joués : " + nbMoves + " par match");
+                this.print ("Durée : " + Main.formatDuration (runningTime) + " par match");
                 System.gc ();
-                this.print ("MÃ©moire utilisÃ©e : "+ Main.formatMemory (Main.getUsedMemory ()));
+                this.print ("Mémoire utilisée : "+ Main.formatMemory (Main.getUsedMemory ()));
             }
         long end = System.currentTimeMillis ();
         this.print ();
-        this.print ("DurÃ©e du championnat : " + Main.formatDuration (end - start));
+        this.print ("Durée du championnat : " + Main.formatDuration (end - start));
         for (int i = 0; i < points.length; i++)
             points [i] = Math.round (points [i] * 100) / 100.;
         this.print ();
