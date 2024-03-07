@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class AweleData extends ArrayList <AweleObservation>
 {
-    private static final String PATH = "data/awele.data";
+    private static final String PATH = "ia_projet/data/awele.data";
     
     /**
      * @return Les données
