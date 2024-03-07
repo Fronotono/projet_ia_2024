@@ -3,14 +3,14 @@ package awele.bot.demo.minmax;
 import awele.core.Board;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Noeud Min : estimation du meilleur coup possible pour l'adversaire
  */
 public class MinNode extends MinMaxNode
 {
     /**
      * Constructeur pour un noeud initial
-     * @param board La situation de jeu pour laquelle il faut prendre une décision
+     * @param board La situation de jeu pour laquelle il faut prendre une decision
      */
     MinNode (Board board)
     {
@@ -19,7 +19,7 @@ public class MinNode extends MinMaxNode
 
     /**
      * Constructeur d'un noeud interne
-     * @param board L'état de la grille de jeu
+     * @param board L'etat de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
@@ -43,11 +43,11 @@ public class MinNode extends MinMaxNode
 
     /**
      * Indique s'il faut faire une coupe alpha-beta
-     * (si l'évaluation courante du noeud est inférieure à l'évaluation courante du noeud parent)
-     * @param eval L'évaluation courante du noeud
+     * (si l'evaluation courante du noeud est inferieure à l'evaluation courante du noeud parent)
+     * @param eval L'evaluation courante du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
-     * @return Un booléen qui indique s'il faut faire une coupe alpha-beta
+     * @return Un booleen qui indique s'il faut faire une coupe alpha-beta
      */
     @Override
     protected boolean alphabeta (double eval, double alpha, double beta)
@@ -57,7 +57,7 @@ public class MinNode extends MinMaxNode
 
     /**
      * Retourne un noeud MaxNode du niveau suivant
-     * @param board L'état de la grille de jeu
+     * @param board L'etat de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
@@ -71,7 +71,7 @@ public class MinNode extends MinMaxNode
 
     /**
      * Mise à jour de alpha
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param alpha L'ancienne valeur d'alpha
      * @return
      */
@@ -83,7 +83,7 @@ public class MinNode extends MinMaxNode
 
     /**
      * Mise à jour de beta
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param beta L'ancienne valeur de beta
      * @return
      */

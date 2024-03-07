@@ -5,8 +5,8 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Second bot qui utilise l'algorithm k-NN pour faire des prédictions
+ * @author Alexandre Blansche
+ * Second bot qui utilise l'algorithm k-NN pour faire des predictions
  */
 public class Knn2Bot extends DemoBot
 {
@@ -20,7 +20,7 @@ public class Knn2Bot extends DemoBot
     public Knn2Bot () throws InvalidBotException
     {
         this.setBotName ("k-NN2");
-        this.addAuthor ("Alexandre Blansché");
+        this.addAuthor ("Alexandre Blansche");
     }
 
     /**
@@ -32,9 +32,9 @@ public class Knn2Bot extends DemoBot
     }
 
     /**
-     * Pour une situation donnée, on regarde les situations les plus proches dans les deux bases de données
-     * La priorité pour chaque coup augmente selon le nombre de voisins pour ce coup sur la base du gagnant
-     * La priorité pour chaque coup diminue selon le nombre de voisins pour ce coup sur la base du perdant
+     * Pour une situation donnee, on regarde les situations les plus proches dans les deux bases de donnees
+     * La priorite pour chaque coup augmente selon le nombre de voisins pour ce coup sur la base du gagnant
+     * La priorite pour chaque coup diminue selon le nombre de voisins pour ce coup sur la base du perdant
      */
     @Override
     public double [] getDecision (Board board)
@@ -55,7 +55,7 @@ public class Knn2Bot extends DemoBot
     }
 
     /**
-     * Création des données : un ensemble pour les coups joués par le gagnant et un autre pour ceux du perdant
+     * Creation des donnees : un ensemble pour les coups joues par le gagnant et un autre pour ceux du perdant
      */
     @Override
     public void learn ()

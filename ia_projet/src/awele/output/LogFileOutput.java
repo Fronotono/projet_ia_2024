@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Sortie dans un fichier texte
  */
 public class LogFileOutput extends Output
@@ -25,7 +25,7 @@ public class LogFileOutput extends Output
     
     /**
      * @param path Chemin vers le fichier
-     * @param anonymous Préservation de l'anonymat
+     * @param anonymous Preservation de l'anonymat
      */
     public LogFileOutput (String path, boolean anonymous)
     {

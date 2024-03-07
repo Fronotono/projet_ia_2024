@@ -7,10 +7,10 @@ import awele.core.InvalidBotException;
 import awele.run.Main;
 
 /**
- * @author Alexandre Blansché
- * Classe abstraite représentant un joueur artificiel pour l'Awele
- * Ce n'est pas la classe à étendre pour le projet, c'est la classe CompetitorBot qu'il faut étendre !
- * Cette classe peut servir à créer des bots qui ne seront pas utilisés lors du championnat
+ * @author Alexandre Blansche
+ * Classe abstraite representant un joueur artificiel pour l'Awele
+ * Ce n'est pas la classe à etendre pour le projet, c'est la classe CompetitorBot qu'il faut etendre !
+ * Cette classe peut servir à creer des bots qui ne seront pas utilises lors du championnat
  */
 public abstract class Bot
 {
@@ -25,7 +25,7 @@ public abstract class Bot
 
     /**
      * Fonction pour donner un nom au bot (soyez imaginatifs !)
-     * Doit être appelé dans le constructeur des classes dérivées
+     * Doit être appele dans le constructeur des classes derivees
      * @param name Le nom du bot
      */
     protected void setBotName (String name)
@@ -35,8 +35,8 @@ public abstract class Bot
     }
 
     /**
-     * Fonction pour définir tous les auteurs
-     * @param names Prénoms et noms des étudiants
+     * Fonction pour definir tous les auteurs
+     * @param names Prenoms et noms des etudiants
      * @throws InvalidBotException Il ne peut y avoir que deux auteurs au maximum !
      */
     protected void setAuthors (String... names) throws InvalidBotException
@@ -53,7 +53,7 @@ public abstract class Bot
 
     /**
      * Fonction pour rajouter un auteur
-     * @param name Prénom et nom de l'étudiant
+     * @param name Prenom et nom de l'etudiant
      * @throws InvalidBotException Il ne peut y avoir que deux auteurs au maximum !
      */
     protected void addAuthor (String name) throws InvalidBotException
@@ -91,26 +91,26 @@ public abstract class Bot
 
     /**
      * Fonction d'initalisation du bot
-     * Cette fonction est appelée avant chaque affrontement
+     * Cette fonction est appelee avant chaque affrontement
      */
     public abstract void initialize ();
 
     /**
      * Fonction de finalisation du bot
-     * Cette fonction est appelée après chaque affrontement
+     * Cette fonction est appelee après chaque affrontement
      */
     public abstract void finish ();
 
     /**
-     * Fonction de prise de décision du bot
+     * Fonction de prise de decision du bot
      * @param board État du plateau de jeu
-     * @return Un tableau de six réels indiquant l'efficacité supposée de chacun des six coups possibles
+     * @return Un tableau de six reels indiquant l'efficacite supposee de chacun des six coups possibles
      */
     public abstract double [] getDecision (Board board);
 
     /**
      * Apprentissage du bot
-     * Cette fonction est appelée une fois (au chargement du bot)
+     * Cette fonction est appelee une fois (au chargement du bot)
      */
     public abstract void learn ();
 }

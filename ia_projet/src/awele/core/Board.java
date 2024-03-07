@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author Alexandre Blansché
- * Classe représentant l'état du plateau de jeu
+ * @author Alexandre Blansche
+ * Classe representant l'etat du plateau de jeu
  */
 public class Board
 {
     /**
-     * Nombre de trou de chaque côté du plateau de jeu
+     * Nombre de trou de chaque côte du plateau de jeu
      */
     public static final int NB_HOLES = 6;
     private static final int NB_SEEDS = 4;
@@ -42,7 +42,7 @@ public class Board
     
     /**
      * @param player L'indice d'un joueur
-     * @return Liste des coups joués par ce joueur (dans l'ordre chronologique)
+     * @return Liste des coups joues par ce joueur (dans l'ordre chronologique)
      */
     public int [] getLog (int player)
     {
@@ -62,7 +62,7 @@ public class Board
     
     /**
      * @param player L'index du joueur courant
-     * @return Le nombre de graines encore en jeu du côté du joueur courant
+     * @return Le nombre de graines encore en jeu du côte du joueur courant
      */
     public int getPlayerSeeds ()
     {
@@ -74,7 +74,7 @@ public class Board
     
     /**
      * @param player L'index du joueur adverse
-     * @return Le nombre de graines encore en jeu du côté du joueur adverse
+     * @return Le nombre de graines encore en jeu du côte du joueur adverse
      */
     public int getOpponentSeeds ()
     {
@@ -164,7 +164,7 @@ public class Board
         int nbBest = 0;
         for (int i = 0; i < Board.NB_HOLES; i++)
             if (Double.isNaN (decision [i]))
-                throw new InvalidBotException ("NaN dans le vecteur de prise de décision");
+                throw new InvalidBotException ("NaN dans le vecteur de prise de decision");
             else if (valid [i])
                 if (decision [i] > bestDecision)
                 {
@@ -273,7 +273,7 @@ public class Board
      * Joue un coup sur une copie du plateau et retourne le score
      * 
      * @param player L'indice du joueur qui joue le coup
-     * @param decision Un tableau de six réels indiquant l'efficacité supposée de chacun des six coups possibles
+     * @param decision Un tableau de six reels indiquant l'efficacite supposee de chacun des six coups possibles
      * @return Le score obtenu en jouant le coup
      * @throws InvalidBotException
      */
@@ -284,11 +284,11 @@ public class Board
     }
     
     /**
-     * Joue un coup sur une copie du plateau et retourne le nouvel état du plateau
+     * Joue un coup sur une copie du plateau et retourne le nouvel etat du plateau
      * 
      * @param player L'indice du joueur qui joue le coup
-     * @param decision Un tableau de six réels indiquant l'efficacité supposée de chacun des six coups possibles
-     * @return Le nouvel état du plateau en jouant le coup
+     * @param decision Un tableau de six reels indiquant l'efficacite supposee de chacun des six coups possibles
+     * @return Le nouvel etat du plateau en jouant le coup
      * @throws InvalidBotException 
      */
     public Board playMoveSimulationBoard (int player, double [] decision) throws InvalidBotException

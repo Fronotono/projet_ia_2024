@@ -4,18 +4,18 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Noeud d'un arbre MinMax
  */
 public abstract class MinMaxNode
 {
-    /** Numéro de joueur de l'IA */
+    /** Numero de joueur de l'IA */
     private static int player;
 
     /** Profondeur maximale */
     private static int maxDepth;
 
-    /** L'évaluation du noeud */
+    /** L'evaluation du noeud */
     private double evaluation;
 
     /** Évaluation des coups selon MinMax */
@@ -23,23 +23,23 @@ public abstract class MinMaxNode
 
     /**
      * Constructeur... 
-     * @param board L'état de la grille de jeu
+     * @param board L'etat de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
     public MinMaxNode (Board board, int depth, double alpha, double beta)
     {
-        /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
+        /* On cree un tableau des evaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
-        /* Initialisation de l'évaluation courante */
+        /* Initialisation de l'evaluation courante */
         this.evaluation = this.worst ();
         /* On parcourt toutes les coups possibles */
         for (int i = 0; i < Board.NB_HOLES; i++)
             /* Si le coup est jouable */
             if (board.getPlayerHoles () [i] != 0)
             {
-                /* Sélection du coup à jouer */
+                /* Selection du coup à jouer */
                 double [] decision = new double [Board.NB_HOLES];
                 decision [i] = 1;
                 /* On copie la grille de jeu et on joue le coup sur la copie */
@@ -49,7 +49,7 @@ public abstract class MinMaxNode
                     int score = copy.playMoveSimulationScore (copy.getCurrentPlayer (), decision);
                     copy = copy.playMoveSimulationBoard (copy.getCurrentPlayer (), decision);
                     /* Si la nouvelle situation de jeu est un coup qui met fin à la partie,
-                       on évalue la situation actuelle */   
+                       on evalue la situation actuelle */   
                     if ((score < 0) ||
                             (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
                             (copy.getNbSeeds () <= 6))
@@ -62,14 +62,14 @@ public abstract class MinMaxNode
                         {
                             /* On construit le noeud suivant */
                             MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta);
-                            /* On récupère l'évaluation du noeud fils */
+                            /* On recupère l'evaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
                         }
-                        /* Sinon (si la profondeur maximale est atteinte), on évalue la situation actuelle */
+                        /* Sinon (si la profondeur maximale est atteinte), on evalue la situation actuelle */
                         else
                             this.decision [i] = this.diffScore (copy);
                     }
-                    /* L'évaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
+                    /* L'evaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
@@ -104,7 +104,7 @@ public abstract class MinMaxNode
 
     /**
      * Mise à jour de alpha
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param alpha L'ancienne valeur d'alpha
      * @return
      */
@@ -112,7 +112,7 @@ public abstract class MinMaxNode
 
     /**
      * Mise à jour de beta
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param beta L'ancienne valeur de beta
      * @return
      */
@@ -128,16 +128,16 @@ public abstract class MinMaxNode
 
     /**
      * Indique s'il faut faire une coupe alpha-beta, selon le type de noeud (MinNode ou MaxNode)
-     * @param eval L'évaluation courante du noeud
+     * @param eval L'evaluation courante du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
-     * @return Un booléen qui indique s'il faut faire une coupe alpha-beta
+     * @return Un booleen qui indique s'il faut faire une coupe alpha-beta
      */
     protected abstract boolean alphabeta (double eval, double alpha, double beta);
 
     /**
      * Retourne un noeud (MinNode ou MaxNode) du niveau suivant
-     * @param board L'état de la grille de jeu
+     * @param board L'etat de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
@@ -146,8 +146,8 @@ public abstract class MinMaxNode
     protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta);
 
     /**
-     * L'évaluation du noeud
-     * @return L'évaluation du noeud
+     * L'evaluation du noeud
+     * @return L'evaluation du noeud
      */
     double getEvaluation ()
     {
@@ -155,7 +155,7 @@ public abstract class MinMaxNode
     }
 
     /**
-     * L'évaluation de chaque coup possible pour le noeud
+     * L'evaluation de chaque coup possible pour le noeud
      * @return
      */
     double [] getDecision ()

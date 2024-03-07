@@ -1,7 +1,7 @@
 package awele.core;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Exception indiquand qu'un bot n'est pas valide
  */
 public class InvalidBotException extends Exception

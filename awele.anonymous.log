@@ -86,3 +86,59 @@ Mémoire utilisée : 1,3 MiB
 
 Affrontement 3/15
 First vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 42.39 par match
+Durée : 00:00:01.463 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 4/15
+First vs. k-NN2
+Score : 0.16 - 2.83
+k-NN2 a gagné
+Nombre de coups joués : 194.6 par match
+Durée : 00:00:00.001 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 5/15
+First vs. k-NN1
+Score : 0.74 - 2.24
+k-NN1 a gagné
+Nombre de coups joués : 205.56 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 6/15
+Random vs. Last
+Score : 0.07 - 2.92
+Last a gagné
+Nombre de coups joués : 108.83 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 1,3 MiB
+
+Affrontement 7/15
+Random vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 34.89 par match
+Durée : 00:00:01.075 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 8/15
+Random vs. k-NN2
+Score : 0.44 - 2.54
+k-NN2 a gagné
+Nombre de coups joués : 80.985 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 9/15
+Random vs. k-NN1
+Score : 0.28 - 2.71
+k-NN1 a gagné
+Nombre de coups joués : 76.56 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 1,4 MiB
+
+Affrontement 10/15
+Last vs. MinMax

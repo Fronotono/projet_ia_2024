@@ -3,14 +3,14 @@ package awele.bot.demo.minmax;
 import awele.core.Board;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Noeud Max : estimation du meilleur coup possible pour l'IA
  */
 public class MaxNode extends MinMaxNode
 {
     /**
      * Constructeur pour un noeud initial
-     * @param board La situation de jeu pour laquelle il faut prendre une décision
+     * @param board La situation de jeu pour laquelle il faut prendre une decision
      */
     MaxNode (Board board)
     {
@@ -42,11 +42,11 @@ public class MaxNode extends MinMaxNode
 
     /**
      * Indique s'il faut faire une coupe alpha-beta
-     * (si l'évaluation courante du noeud est supérieure à l'évaluation courante du noeud parent)
-     * @param eval L'évaluation courante du noeud
+     * (si l'evaluation courante du noeud est superieure à l'evaluation courante du noeud parent)
+     * @param eval L'evaluation courante du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
-     * @return Un booléen qui indique s'il faut faire une coupe alpha-beta
+     * @return Un booleen qui indique s'il faut faire une coupe alpha-beta
      */
     @Override
     protected boolean alphabeta (double eval, double alpha, double beta)
@@ -56,7 +56,7 @@ public class MaxNode extends MinMaxNode
 
     /**
      * Retourne un noeud MinNode du niveau suivant
-     * @param board L'état de la grille de jeu
+     * @param board L'etat de la grille de jeu
      * @param depth La profondeur du noeud
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
@@ -70,7 +70,7 @@ public class MaxNode extends MinMaxNode
 
     /**
      * Mise à jour de alpha
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param alpha L'ancienne valeur d'alpha
      * @return
      */
@@ -82,7 +82,7 @@ public class MaxNode extends MinMaxNode
 
     /**
      * Mise à jour de beta
-     * @param evaluation L'évaluation courante du noeud
+     * @param evaluation L'evaluation courante du noeud
      * @param beta L'ancienne valeur de beta
      * @return
      */

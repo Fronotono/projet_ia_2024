@@ -3,8 +3,8 @@ package awele.output;
 import java.util.ArrayList;
 
 /**
- * @author Alexandre Blansché
- * Classe pour gérer les affichages lors des parties d'Awele
+ * @author Alexandre Blansche
+ * Classe pour gerer les affichages lors des parties d'Awele
  */
 public class OutputWriter
 {
@@ -31,7 +31,7 @@ public class OutputWriter
     }
     
     /**
-     * Rajoute une sortie de débuggage
+     * Rajoute une sortie de debuggage
      * @param output Sortie à rajouter
      */
     public void addDebug (Output output)

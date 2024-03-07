@@ -4,8 +4,8 @@ import awele.bot.Bot;
 import awele.output.OutputWriter;
 
 /**
- * @author Alexandre Blansché
- * Classe représentant une partie d'Awele entre deux joueurs
+ * @author Alexandre Blansche
+ * Classe representant une partie d'Awele entre deux joueurs
  */
 public class Awele extends OutputWriter
 {
@@ -65,7 +65,7 @@ public class Awele extends OutputWriter
     }
     
     /**
-     * @return Le nombre de coups joués
+     * @return Le nombre de coups joues
      */
     public double getNbMoves ()
     {
@@ -73,7 +73,7 @@ public class Awele extends OutputWriter
     }
     
     /**
-     * @return La durée de l'affrontement
+     * @return La duree de l'affrontement
      */
     public long getRunningTime ()
     {
@@ -110,13 +110,13 @@ public class Awele extends OutputWriter
         this.scores [1] = game1Score [1] + game2Score [1];
         int winner = this.getWinner ();
         if (winner < 0)
-            this.printDebug ("Égalité");
+            this.printDebug ("Égalite");
         else
             this.printDebug ("Gagnant : " + this.players [winner]);
     }
     
     /**
-     * @return 0 si le premier bot a gagné, 1 si le second a gagné, -1 s'il y a égalité
+     * @return 0 si le premier bot a gagne, 1 si le second a gagne, -1 s'il y a egalite
      */
     public int getWinner ()
     {

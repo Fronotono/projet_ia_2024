@@ -3,8 +3,8 @@ package awele.data;
 import awele.core.Board;
 
 /**
- * @author Alexandre Blansché
- * Classe représentant une observation de la base de données de coups jouées
+ * @author Alexandre Blansche
+ * Classe representant une observation de la base de donnees de coups jouees
  */
 public class AweleObservation
 {
@@ -43,7 +43,7 @@ public class AweleObservation
     }
 
     /**
-     * @return Le coup joué par le joueur courant
+     * @return Le coup joue par le joueur courant
      */
     public int getMove ()
     {
@@ -51,7 +51,7 @@ public class AweleObservation
     }
 
     /**
-     * @return Le joueur courant a-t-il gagné la partie ?
+     * @return Le joueur courant a-t-il gagne la partie ?
      */
     public boolean isWon ()
     {

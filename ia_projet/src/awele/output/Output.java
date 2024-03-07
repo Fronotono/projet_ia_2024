@@ -1,8 +1,8 @@
 package awele.output;
 
 /**
- * @author Alexandre Blansché
- * Classe abstraite pour gérer les affichages lors des parties d'Awele
+ * @author Alexandre Blansche
+ * Classe abstraite pour gerer les affichages lors des parties d'Awele
  */
 public abstract class Output
 {
@@ -31,7 +31,7 @@ public abstract class Output
     
     /**
      * @param object Affichage d'un objet quelconque
-     * @param anonymous Affichage qui préserve l'anonymat
+     * @param anonymous Affichage qui preserve l'anonymat
      */
     public void print (Object object, boolean anonymous)
     {

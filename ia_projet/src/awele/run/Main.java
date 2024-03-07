@@ -22,7 +22,7 @@ import awele.output.StandardOutput;
 import javassist.Modifier;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Programme principal
  */
 public final class Main extends OutputWriter
@@ -32,7 +32,7 @@ public final class Main extends OutputWriter
     private static Main instance = null;
     private static final String LOG_FILE = "awele.log";
     private static final String ANONYMOUS_LOG_FILE = "awele.anonymous.log";
-    // Pour l'évaluation, seuls les bots des étudiants (CompetitorBot) sont mis en compétition
+    // Pour l'evaluation, seuls les bots des etudiants (CompetitorBot) sont mis en competition
     private static final Tournament TOURNAMENT = Tournament.ALL;
     //private static final Tournament TOURNAMENT = Tournament.COMPETITORS;
     //private static final Tournament TOURNAMENT = Tournament.CHAMPIONS;
@@ -79,7 +79,7 @@ public final class Main extends OutputWriter
     
     private void printDisqual (String botName, String cause)
     {
-        this.print ("Bot \"" + botName + "\" disqualifié : " + cause);
+        this.print ("Bot \"" + botName + "\" disqualifie : " + cause);
         
     }
     
@@ -92,7 +92,7 @@ public final class Main extends OutputWriter
     {
         long startLoading = System.currentTimeMillis ();
         long heapMaxSize = Runtime.getRuntime().maxMemory();
-        this.print ("Mémoire totale : "+ Main.formatMemory (heapMaxSize));
+        this.print ("Memoire totale : "+ Main.formatMemory (heapMaxSize));
         RandomBot random = null;
         try
         {
@@ -152,7 +152,7 @@ public final class Main extends OutputWriter
         			subClasses.add (subClass);
         	}
         }
-        this.print (subClasses.size () + " classes ont été trouvées");
+        this.print (subClasses.size () + " classes ont ete trouvees");
         for (Class <? extends Bot> botClass: subClasses)
         	this.print (botClass);
         this.print ();
@@ -185,9 +185,9 @@ public final class Main extends OutputWriter
                         Awele awele = new Awele (bot, random);
                         awele.play ();
                         long decisionTime = (long) ((2 * awele.getRunningTime ()) / awele.getNbMoves ()) - randomAverageDecisionTime;
-                        this.print ("Durée d'une prise de décision : " + Main.formatDuration (decisionTime));
+                        this.print ("Duree d'une prise de decision : " + Main.formatDuration (decisionTime));
                         if (decisionTime > Main.MAX_DECISION_TIME)
-                            this.printDisqual (bot.getName (), "durée d'une prise de décision trop long");
+                            this.printDisqual (bot.getName (), "duree d'une prise de decision trop long");
                         else
                         {
                             long memoryAfter = Main.getUsedMemory ();
@@ -195,10 +195,10 @@ public final class Main extends OutputWriter
                             long totalUsedMemory = Math.max (0, memoryAfter - memoryBefore);
                             memoryAfter = Main.getUsedMemory ();
                             long usedMemory = Math.max (0, memoryAfter - memoryBefore);
-                            this.print ("Usage mémoire : " + Main.formatMemory (usedMemory));
-                            this.print ("Usage mémoire maximum : " + Main.formatMemory (totalUsedMemory));
+                            this.print ("Usage memoire : " + Main.formatMemory (usedMemory));
+                            this.print ("Usage memoire maximum : " + Main.formatMemory (totalUsedMemory));
                             if ((usedMemory > Main.MAX_MEMORY) || (totalUsedMemory > Main.MAX_TOTAL_MEMORY))
-                                this.printDisqual (bot.getName (), "volume mémoire trop important");
+                                this.printDisqual (bot.getName (), "volume memoire trop important");
                             else
                                 this.bots.add (bot);
                         }
@@ -208,17 +208,17 @@ public final class Main extends OutputWriter
             }
             catch (Exception e)
             {
-                this.printDisqual (subClass.getName (), "ne peut pas être instancié");
+                this.printDisqual (subClass.getName (), "ne peut pas être instancie");
                 this.print (e);
                 e.printStackTrace();
                 this.print ();
             }
         }
-        this.print (this.bots.size () + " bots ont été instanciés");
+        this.print (this.bots.size () + " bots ont ete instancies");
         System.gc ();
         long endLoading = System.currentTimeMillis ();
-        this.print ("Durée du chargement : " + Main.formatDuration (endLoading - startLoading));
-        this.print ("Mémoire utilisée : "+ Main.formatMemory (Main.getUsedMemory ()));
+        this.print ("Duree du chargement : " + Main.formatDuration (endLoading - startLoading));
+        this.print ("Memoire utilisee : "+ Main.formatMemory (Main.getUsedMemory ()));
     }
     
     private void tournament ()
@@ -270,21 +270,21 @@ public final class Main extends OutputWriter
                 runningTime /=  Main.NB_RUNS;
                 this.print ("Score : " + localPoints [0] + " - " + localPoints [1]);
                 if (localPoints [0] == localPoints [1])
-                    this.print ("Égalité");
+                    this.print ("Égalite");
                 else if (localPoints [0] > localPoints [1])
-                    this.print (this.bots.get (i).getName () + " a gagné");
+                    this.print (this.bots.get (i).getName () + " a gagne");
                 else
-                    this.print (this.bots.get (j).getName () + " a gagné");
+                    this.print (this.bots.get (j).getName () + " a gagne");
                 points [i] += localPoints [0];
                 points [j] += localPoints [1];
-                this.print ("Nombre de coups joués : " + nbMoves + " par match");
-                this.print ("Durée : " + Main.formatDuration (runningTime) + " par match");
+                this.print ("Nombre de coups joues : " + nbMoves + " par match");
+                this.print ("Duree : " + Main.formatDuration (runningTime) + " par match");
                 System.gc ();
-                this.print ("Mémoire utilisée : "+ Main.formatMemory (Main.getUsedMemory ()));
+                this.print ("Memoire utilisee : "+ Main.formatMemory (Main.getUsedMemory ()));
             }
         long end = System.currentTimeMillis ();
         this.print ();
-        this.print ("Durée du championnat : " + Main.formatDuration (end - start));
+        this.print ("Duree du championnat : " + Main.formatDuration (end - start));
         for (int i = 0; i < points.length; i++)
             points [i] = Math.round (points [i] * 100) / 100.;
         this.print ();

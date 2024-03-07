@@ -5,8 +5,8 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Bot qui prend ses décisions selon le MinMax
+ * @author Alexandre Blansche
+ * Bot qui prend ses decisions selon le MinMax
  */
 public class MinMaxBot extends DemoBot
 {
@@ -19,7 +19,7 @@ public class MinMaxBot extends DemoBot
     public MinMaxBot () throws InvalidBotException
     {
         this.setBotName ("MinMax");
-        this.addAuthor ("Alexandre Blansché");
+        this.addAuthor ("Alexandre Blansche");
     }
 
     /**
@@ -39,7 +39,7 @@ public class MinMaxBot extends DemoBot
     }
 
     /**
-     * Sélection du coup selon l'algorithme MinMax
+     * Selection du coup selon l'algorithme MinMax
      */
     @Override
     public double [] getDecision (Board board)

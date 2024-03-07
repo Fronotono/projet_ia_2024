@@ -6,15 +6,15 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
- * @author Alexandre Blansché
- * Base de donnée de coups joués sur laquelle peut se baser l'apprentissage
+ * @author Alexandre Blansche
+ * Base de donnee de coups joues sur laquelle peut se baser l'apprentissage
  */
 public class AweleData extends ArrayList <AweleObservation>
 {
     private static final String PATH = "ia_projet/data/awele.data";
     
     /**
-     * @return Les données
+     * @return Les donnees
      */
     public static AweleData getInstance ()
     {

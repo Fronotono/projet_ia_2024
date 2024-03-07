@@ -1,7 +1,7 @@
 package awele.output;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Sortie standard
  * Classe singleton
  */

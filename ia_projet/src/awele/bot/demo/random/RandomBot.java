@@ -7,7 +7,7 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Bot qui joue au hasard
  */
 public class RandomBot extends DemoBot
@@ -20,7 +20,7 @@ public class RandomBot extends DemoBot
     public RandomBot () throws InvalidBotException
     {
         this.setBotName ("Random");
-        this.addAuthor ("Alexandre Blansché");
+        this.addAuthor ("Alexandre Blansche");
     }
 
     /**
@@ -32,7 +32,7 @@ public class RandomBot extends DemoBot
     }
 
     /**
-     * La priorité de chaque coup est donné au hasard
+     * La priorite de chaque coup est donne au hasard
      */
     @Override
     public double [] getDecision (Board board)
@@ -44,7 +44,7 @@ public class RandomBot extends DemoBot
     }
     
     /**
-     * Initialisation de la génération pseudo-aléatoire de nombre
+     * Initialisation de la generation pseudo-aleatoire de nombre
      */
     @Override
     public void learn ()

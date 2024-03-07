@@ -5,7 +5,7 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
+ * @author Alexandre Blansche
  * Bot qui joue toujours le coup le plus à gauche
  */
 public class FirstBot extends DemoBot
@@ -16,7 +16,7 @@ public class FirstBot extends DemoBot
     public FirstBot () throws InvalidBotException
     {
         this.setBotName ("First");
-        this.addAuthor ("Alexandre Blansché");
+        this.addAuthor ("Alexandre Blansche");
     }
 
     /**
@@ -28,7 +28,7 @@ public class FirstBot extends DemoBot
     }
 
     /**
-     * Retourne une valeur décroissante avec l'index du trou
+     * Retourne une valeur decroissante avec l'index du trou
      */
     @Override
     public double [] getDecision (Board board)

@@ -7,16 +7,16 @@ import awele.data.AweleData;
 import awele.data.AweleObservation;
 
 /**
- * @author Alexandre Blansché
- * Données pour la seconde version de l'algorithme k-NN
+ * @author Alexandre Blansche
+ * Donnees pour la seconde version de l'algorithme k-NN
  */
 public class Knn2Data
 {
     int [][] data;
     
     /**
-     * On accède au données et on récupère toutes les observations le joueur
-     * @param won indique si l'on considère les coups joués par le gagnant (true) ou par le perdant (false)
+     * On accède au donnees et on recupère toutes les observations le joueur
+     * @param won indique si l'on considère les coups joues par le gagnant (true) ou par le perdant (false)
      */
     public Knn2Data (boolean won)
     {
@@ -70,7 +70,7 @@ public class Knn2Data
     /**
      * @param x Une situation de jeu
      * @param k Un nombre de voisin
-     * @return Un tableau contenant le nombre de voisins de la situation donnée pour chaque coup jouable
+     * @return Un tableau contenant le nombre de voisins de la situation donnee pour chaque coup jouable
      */
     public double [] countNeighbors (int [] x, int k)
     {
