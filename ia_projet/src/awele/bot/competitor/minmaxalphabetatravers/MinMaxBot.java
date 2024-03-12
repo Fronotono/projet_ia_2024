@@ -1,11 +1,13 @@
 package awele.bot.competitor.minmaxalphabetatravers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import awele.bot.Bot;
 import awele.bot.CompetitorBot;
 import awele.bot.DemoBot;
+import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -27,6 +29,11 @@ public class MinMaxBot extends CompetitorBot
         this.setBotName ("AlphaBetaHMathis");
         this.addAuthor ("Theo COLLET");
     }
+    
+    private MinMaxBot (int[] poids) throws InvalidBotException
+    {
+        this.poids = poids;
+    }
 
     /**
      * Rien à faire
@@ -42,22 +49,68 @@ public class MinMaxBot extends CompetitorBot
     @Override
     public void learn ()
     {
-    	poids = new int[6];
+    	System.out.println("Learn");
+    	try {
+	    	long start = System.currentTimeMillis();
+
+	    	
+	    	int taillePop = 40, poidsMin = -20, poidsMax = 20, nbCombattants = 5, nbMatch = 2;
+	    	double tauxMutation = 0.2;
+	    	
+	    	Individu[] individus = new Individu[taillePop];
+
+	    	poids = new int[6];
+	    	poids[0] = poids[2] = poids[4] = 20;
+	    	poids[1] = poids[3] = poids[5] = -20;   	
+	    	individus[0] = new Individu(poids);
+	    	
+	    	for(int i = 1; i < taillePop; i++) {
+	    		individus[i] = new Individu(tabRandom(6,poidsMin,poidsMax));
+	    	}
+	    	
+	    	//competition
+	    	while(System.currentTimeMillis() - start < (1000 * 60 * 30)) //30minutes
+	    	{
+	    		System.out.println("Nouvelle Generation t="+(System.currentTimeMillis() - start)/1000/60+"min");
+	    		for(int i = 0; i < nbCombattants; i++) {
+	    			for(int j = 0; j < taillePop; j++) {
+	    				if(i!=j) {
+	    					System.out.print("Debut de jeu "+i+" "+j);
+							Awele awele = new Awele (new MinMaxBot(individus[i].poids),new MinMaxBot(individus[j].poids));
+							awele.play();
+							System.out.println(" Fin de jeu");
+							if(awele.getWinner() == -1) {
+								individus[i].fitness += 100;
+								individus[j].fitness += 100;
+							} else if(awele.getWinner() == 0) {
+								individus[i].fitness += 200;
+							} else {
+								individus[j].fitness += 200;
+							}
+	    				}
+	    			}
+	    			//TODO AJOUTER COMBAT DE BOSS
+	    		}
+	    		//TRI
+	    		Arrays.sort(individus);
+	    		//Verification du meilleur
+	    		if(individus[0].fitness < individus[1].fitness)individus[0] = individus[1];
+	    		//REPOPULATION
+	    		Individu m = individus[0];
+	    		Individu[] nouvellePop = new Individu[taillePop];
+	    		for(int i = 1; i < taillePop; i++) {
+	    			nouvellePop[i] = new Individu(individus[random(0,taillePop/2)],individus[random(0,taillePop/2)]);
+	    		}
+	    		individus = nouvellePop;
+	    		individus[0] = m;
+	    		System.out.println(individus[0]);
+	    		individus[0].fitness = 0;
+	    	}
+	    	this.poids = individus[0].poids;
     	
-    	int taillePop = 42, poidsMin = -20, poidsMax = 20, nbCombattants = 5, nbMatch = 2;
-    	double tauxMutation = 0.2;
-    	
-    	MinMaxNode[][] generations = new MinMaxNode[2][taillePop];
-    	MinMaxNode.initialize (new Board(), MinMaxBot.MAX_DEPTH);
-   
-    	for(int i = 0; i < 6; i++)poids[i]=(i%2==0)?20:-20;
-    	generations[0][0] = new MaxNode(new Board(), poids);
-    	
-    	for(int i = 1; i < taillePop; i++) {
-    		generations[0][i] = new MaxNode(new Board(),tabRandom(6,poidsMin,poidsMax));
-    	}
-    	
-    	
+		} catch (InvalidBotException e) {
+			e.printStackTrace();
+		}    	
     }
 
     /**
@@ -66,7 +119,7 @@ public class MinMaxBot extends CompetitorBot
     @Override
     public double [] getDecision (Board board)
     {
-        MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
+        MinMaxNode.initialize (board, 6);
         return new MaxNode (board,poids).getDecision ();
     }
 
