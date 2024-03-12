@@ -1,126 +1,153 @@
 Memoire totale : 1,8 GiB
 Instanciation du bot "Random"
-6 classes ont ete trouvees
-class awele.bot.demo.first.FirstBot
-class awele.bot.demo.random.RandomBot
-class awele.bot.demo.last.LastBot
-class awele.bot.demo.minmax.MinMaxBot
-class awele.bot.demo.knn2.Knn2Bot
-class awele.bot.demo.knn1.Knn1Bot
+7 classes ont ete trouvees
+class awele.bot.competitor.minmaxH3.MinMaxBot
+class awele.bot.competitor.minmaxH4.MinMaxBot
+class awele.bot.competitor.last.LastBot
+class awele.bot.competitor.minmaxH1.MinMaxBot
+class awele.bot.competitor.minmaxH2.MinMaxBot
+class awele.bot.competitor.minmax.MinMaxBot
+class awele.bot.competitor.minmaxlast.MinMaxBot
 
-Bot 1/6
-Classe : awele.bot.demo.first.FirstBot
-Instanciation du bot "First"
-Nom du bot : First
-Auteur(s) : Alexandre Blansche
+Bot 1/7
+Classe : awele.bot.competitor.minmaxH3.MinMaxBot
+Instanciation du bot "MinMaxH3"
+Nom du bot : MinMaxH3
+Auteur(s) : Lorine BIGONI
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.000
-Usage memoire : 2,3 KiB
-Usage memoire maximum : 404,4 KiB
+Duree d'une prise de decision : 00:00:00.191
+Usage memoire : 3,3 KiB
+Usage memoire maximum : 21,5 MiB
 
-Bot 2/6
-Classe : awele.bot.demo.random.RandomBot
-Instanciation du bot "Random"
-Nom du bot : Random
-Auteur(s) : Alexandre Blansche
+Bot 2/7
+Classe : awele.bot.competitor.minmaxH4.MinMaxBot
+Instanciation du bot "MinMaxH4"
+Nom du bot : MinMaxH4
+Auteur(s) : Lorine BIGONI
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.000
-Usage memoire : 592 B
-Usage memoire maximum : 389,2 KiB
+Duree d'une prise de decision : 00:00:00.162
+Usage memoire : 1,2 KiB
+Usage memoire maximum : 40,0 MiB
 
-Bot 3/6
-Classe : awele.bot.demo.last.LastBot
+Bot 3/7
+Classe : awele.bot.competitor.last.LastBot
 Instanciation du bot "Last"
 Nom du bot : Last
 Auteur(s) : Alexandre Blansche
 Temps d'apprentissage : 00:00:00.000
 Duree d'une prise de decision : 00:00:00.000
 Usage memoire : 608 B
-Usage memoire maximum : 381,2 KiB
+Usage memoire maximum : 389,7 KiB
 
-Bot 4/6
-Classe : awele.bot.demo.minmax.MinMaxBot
+Bot 4/7
+Classe : awele.bot.competitor.minmaxH1.MinMaxBot
+Instanciation du bot "MinMaxH1"
+Nom du bot : MinMaxH1
+Auteur(s) : Lorine BIGONI
+Temps d'apprentissage : 00:00:00.000
+Duree d'une prise de decision : 00:00:00.104
+Usage memoire : 1,2 KiB
+Usage memoire maximum : 66,0 MiB
+
+Bot 5/7
+Classe : awele.bot.competitor.minmaxH2.MinMaxBot
+Instanciation du bot "MinMaxH2"
+Nom du bot : MinMaxH2
+Auteur(s) : Lorine BIGONI
+Temps d'apprentissage : 00:00:00.000
+Duree d'une prise de decision : 00:00:00.119
+Usage memoire : 1,4 KiB
+Usage memoire maximum : 68,5 MiB
+
+Bot 6/7
+Classe : awele.bot.competitor.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansche
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.146
+Duree d'une prise de decision : 00:00:00.116
+Usage memoire : 1,2 KiB
+Usage memoire maximum : 13,0 MiB
+
+Bot 7/7
+Classe : awele.bot.competitor.minmaxlast.MinMaxBot
+Instanciation du bot "MinMaxInverte"
+Nom du bot : MinMaxInverte
+Auteur(s) : Theo Collet
+Temps d'apprentissage : 00:00:00.000
+Duree d'une prise de decision : 00:00:00.136
 Usage memoire : 1,3 KiB
-Usage memoire maximum : 3,5 MiB
+Usage memoire maximum : 57,0 MiB
 
-Bot 5/6
-Classe : awele.bot.demo.knn2.Knn2Bot
-Instanciation du bot "k-NN2"
-Nom du bot : k-NN2
-Auteur(s) : Alexandre Blansche
-Temps d'apprentissage : 00:00:00.014
-Duree d'une prise de decision : 00:00:00.000
-Usage memoire : 26,5 KiB
-Usage memoire maximum : 1,7 MiB
-
-Bot 6/6
-Classe : awele.bot.demo.knn1.Knn1Bot
-Instanciation du bot "k-NN1"
-Nom du bot : k-NN1
-Auteur(s) : Alexandre Blansche
-Temps d'apprentissage : 00:00:00.003
-Duree d'une prise de decision : 00:00:00.000
-Usage memoire : 12,4 KiB
-Usage memoire maximum : 896,4 KiB
-
-6 bots ont ete instancies
-Duree du chargement : 00:00:06.946
+7 bots ont ete instancies
+Duree du chargement : 00:00:32.059
 Memoire utilisee : 1,3 MiB
 
 Que le championnat commence !
 
-Affrontement 1/15
-First vs. Random
-Score : 1.42 - 1.57
-Random a gagne
-Nombre de coups joues : 157.69 par match
-Duree : 00:00:00.000 par match
-Memoire utilisee : 1,3 MiB
-
-Affrontement 2/15
-First vs. Last
-Score : 0.0 - 3.0
-Last a gagne
-Nombre de coups joues : 291.5 par match
-Duree : 00:00:00.000 par match
+Affrontement 1/21
+MinMaxH3 vs. MinMaxH4
+Score : 0.57 - 2.43
+MinMaxH4 a gagne
+Nombre de coups joues : 63.49 par match
+Duree : 00:00:03.679 par match
 Memoire utilisee : 1,4 MiB
 
-Affrontement 3/15
-First vs. MinMax
+Affrontement 2/21
+MinMaxH3 vs. Last
+Score : 2.98 - 0.01
+MinMaxH3 a gagne
+Nombre de coups joues : 84.565 par match
+Duree : 00:00:02.937 par match
+Memoire utilisee : 1,4 MiB
+
+Affrontement 3/21
+MinMaxH3 vs. MinMaxH1
+Score : 0.0 - 3.0
+MinMaxH1 a gagne
+Nombre de coups joues : 50.36 par match
+Duree : 00:00:02.351 par match
+Memoire utilisee : 1,4 MiB
+
+Affrontement 4/21
+MinMaxH3 vs. MinMaxH2
+Score : 2.53 - 0.43
+MinMaxH3 a gagne
+Nombre de coups joues : 55.79 par match
+Duree : 00:00:02.385 par match
+Memoire utilisee : 1,3 MiB
+
+Affrontement 5/21
+MinMaxH3 vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagne
-Nombre de coups joues : 40.96 par match
-Duree : 00:00:02.538 par match
+Nombre de coups joues : 52.945 par match
+Duree : 00:00:02.340 par match
 Memoire utilisee : 1,4 MiB
 
-Affrontement 4/15
-First vs. k-NN2
-Score : 0.39 - 2.61
-k-NN2 a gagne
-Nombre de coups joues : 203.485 par match
-Duree : 00:00:00.003 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 5/15
-First vs. k-NN1
-Score : 0.7 - 2.29
-k-NN1 a gagne
-Nombre de coups joues : 190.405 par match
-Duree : 00:00:00.001 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 6/15
-Random vs. Last
-Score : 0.06 - 2.94
-Last a gagne
-Nombre de coups joues : 108.14 par match
-Duree : 00:00:00.000 par match
+Affrontement 6/21
+MinMaxH3 vs. MinMaxInverte
+Score : 0.0 - 3.0
+MinMaxInverte a gagne
+Nombre de coups joues : 51.13 par match
+Duree : 00:00:02.290 par match
 Memoire utilisee : 1,3 MiB
 
-Affrontement 7/15
-Random vs. MinMax
+Affrontement 7/21
+MinMaxH4 vs. Last
+Score : 3.0 - 0.0
+MinMaxH4 a gagne
+Nombre de coups joues : 81.365 par match
+Duree : 00:00:02.431 par match
+Memoire utilisee : 1,4 MiB
+
+Affrontement 8/21
+MinMaxH4 vs. MinMaxH1
+Score : 0.03 - 2.97
+MinMaxH1 a gagne
+Nombre de coups joues : 58.87 par match
+Duree : 00:00:02.569 par match
+Memoire utilisee : 1,3 MiB
+
+Affrontement 9/21
+MinMaxH4 vs. MinMaxH2
