@@ -12,16 +12,16 @@ Nom du bot : Last
 Temps d'apprentissage : 00:00:00.000
 Duree d'une prise de decision : 00:00:00.000
 Usage memoire : 2,3 KiB
-Usage memoire maximum : 515,8 KiB
+Usage memoire maximum : 476,9 KiB
 
 Bot 2/3
 Classe : awele.bot.competitor.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.079
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 124,0 MiB
+Duree d'une prise de decision : 00:00:00.058
+Usage memoire : 1,7 KiB
+Usage memoire maximum : 91,0 MiB
 
 Bot 3/3
 Classe : awele.bot.competitor.minmaxlast.MinMaxBot
@@ -30,10 +30,10 @@ Nom du bot : MinMaxInverte
 Temps d'apprentissage : 00:00:00.000
 Duree d'une prise de decision : 00:00:00.064
 Usage memoire : 1,3 KiB
-Usage memoire maximum : 138,0 MiB
+Usage memoire maximum : 132,0 MiB
 
 3 bots ont ete instancies
-Duree du chargement : 00:00:04.103
+Duree du chargement : 00:00:04.521
 Memoire utilisee : 1,3 MiB
 
 Que le championnat commence !
@@ -42,17 +42,34 @@ Affrontement 1/3
 Last vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagne
-Nombre de coups joues : 56.21 par match
-Duree : 00:00:01.941 par match
+Nombre de coups joues : 55.05 par match
+Duree : 00:00:01.835 par match
 Memoire utilisee : 1,4 MiB
 
 Affrontement 2/3
 Last vs. MinMaxInverte
 Score : 0.0 - 3.0
 MinMaxInverte a gagne
-Nombre de coups joues : 55.67 par match
-Duree : 00:00:01.898 par match
-Memoire utilisee : 1,5 MiB
+Nombre de coups joues : 54.6 par match
+Duree : 00:00:01.805 par match
+Memoire utilisee : 1,6 MiB
 
 Affrontement 3/3
 MinMax vs. MinMaxInverte
+Score : 1.35 - 1.65
+MinMaxInverte a gagne
+Nombre de coups joues : 75.285 par match
+Duree : 00:00:03.548 par match
+Memoire utilisee : 1,5 MiB
+
+Duree du championnat : 00:23:58.023
+
+Scores finaux :
+Last : 0.0
+MinMax : 4.35
+MinMaxInverte : 4.65
+
+Rangs :
+1. MinMaxInverte : 4.65
+2. MinMax : 4.35
+3. Last : 0.0
