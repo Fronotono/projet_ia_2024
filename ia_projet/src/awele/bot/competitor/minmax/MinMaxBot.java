@@ -19,7 +19,7 @@ public class MinMaxBot extends CompetitorBot
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MinMax");
+        this.setBotName ("MinMaxDiffScore");
         this.addAuthor ("Alexandre Blansche");
     }
 

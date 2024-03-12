@@ -76,6 +76,8 @@ public abstract class MinMaxNode
                     }
                     /* L'evaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
+                    //*THEO : coupe *//
+                    if(alphabeta(this.evaluation,alpha,beta))break;
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
                     {

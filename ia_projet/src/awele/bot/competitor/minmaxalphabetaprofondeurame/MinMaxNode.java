@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxElagage;
+package awele.bot.competitor.minmaxalphabetaprofondeurame;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -30,7 +30,7 @@ public abstract class MinMaxNode
      */
     public MinMaxNode (Board board, int depth, double alpha, double beta)
     {
-        /* On cree un tableau des evaluations des coups Ã  jouer pour chaque situation possible */
+        /* On cree un tableau des evaluations des coups a jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'evaluation courante */
         this.evaluation = this.worst ();
@@ -48,7 +48,7 @@ public abstract class MinMaxNode
                 {
                     int score = copy.playMoveSimulationScore (copy.getCurrentPlayer (), decision);
                     copy = copy.playMoveSimulationBoard (copy.getCurrentPlayer (), decision);
-                    /* Si la nouvelle situation de jeu est un coup qui met fin Ã  la partie,
+                    /* Si la nouvelle situation de jeu est un coup qui met fin a la partie,
                        on evalue la situation actuelle */   
                     if ((score < 0) ||
                             (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
@@ -58,7 +58,7 @@ public abstract class MinMaxNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < MinMaxNode.maxDepth)
+                        if (depth < maxDepth)
                         {
                             /* On construit le noeud suivant */
                             MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta);
@@ -71,17 +71,14 @@ public abstract class MinMaxNode
                     }
                     /* L'evaluation courante du noeud est mise Ã  jour, selon le type de noeud (MinNode ou MaxNode) */
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
+                    //*THEO : coupe *//
+                    if(alphabeta(this.evaluation,alpha,beta))break;
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
                     {
-                        if (depth % 2 == 0) { // Noeud Min
-                            beta = Math.min(beta, this.evaluation);
-                            if (this.evaluation <= alpha) break; // élaguer les nœuds restants
-                        } else { // Noeud Max
-                            alpha = Math.max(alpha, this.evaluation);
-                            if (this.evaluation >= beta) break; // élaguer les nœuds restants
-                        }
-                    }                        
+                        alpha = this.alpha (this.evaluation, alpha);
+                        beta = this.beta (this.evaluation, beta);
+                    }      
                 }
                 catch (InvalidBotException e)
                 {

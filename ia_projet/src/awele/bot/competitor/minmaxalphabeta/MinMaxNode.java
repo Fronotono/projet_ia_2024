@@ -30,7 +30,7 @@ public abstract class MinMaxNode
      */
     public MinMaxNode (Board board, int depth, double alpha, double beta)
     {
-        /* On cree un tableau des evaluations des coups à jouer pour chaque situation possible */
+        /* On cree un tableau des evaluations des coups a jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'evaluation courante */
         this.evaluation = this.worst ();
@@ -48,7 +48,7 @@ public abstract class MinMaxNode
                 {
                     int score = copy.playMoveSimulationScore (copy.getCurrentPlayer (), decision);
                     copy = copy.playMoveSimulationBoard (copy.getCurrentPlayer (), decision);
-                    /* Si la nouvelle situation de jeu est un coup qui met fin à la partie,
+                    /* Si la nouvelle situation de jeu est un coup qui met fin a la partie,
                        on evalue la situation actuelle */   
                     if ((score < 0) ||
                             (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
@@ -71,6 +71,8 @@ public abstract class MinMaxNode
                     }
                     /* L'evaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
+                    //*THEO : coupe *//
+                    if(alphabeta(this.evaluation,alpha,beta))break;
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
                     {

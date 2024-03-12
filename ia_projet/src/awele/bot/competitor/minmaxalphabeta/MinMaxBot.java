@@ -1,5 +1,6 @@
 package awele.bot.competitor.minmaxalphabeta;
 
+import awele.bot.Bot;
 import awele.bot.CompetitorBot;
 import awele.bot.DemoBot;
 import awele.core.Board;
@@ -9,7 +10,7 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansche
  * Bot qui prend ses decisions selon le MinMax
  */
-public class MinMaxBot extends CompetitorBot
+public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6;
@@ -19,8 +20,8 @@ public class MinMaxBot extends CompetitorBot
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MinMax");
-        this.addAuthor ("Alexandre Blansche");
+        this.setBotName ("AlphaBetaDiffScoreP6");
+        this.addAuthor ("Theo COLLET");
     }
 
     /**

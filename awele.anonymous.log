@@ -1,203 +1,111 @@
-Memoire totale : 1,8 GiB
+Memoire totale : 4,0 GiB
 Instanciation du bot "Random"
-7 classes ont ete trouvees
-class awele.bot.competitor.minmaxH3.MinMaxBot
+4 classes ont ete trouvees
+class awele.bot.competitor.minmaxalphabetatravers.MinMaxBot
+class awele.bot.competitor.minmaxalphabetaprofondeurame.MinMaxBot
 class awele.bot.competitor.minmaxH4.MinMaxBot
-class awele.bot.competitor.last.LastBot
-class awele.bot.competitor.minmaxH1.MinMaxBot
-class awele.bot.competitor.minmaxH2.MinMaxBot
 class awele.bot.competitor.minmax.MinMaxBot
-class awele.bot.competitor.minmaxlast.MinMaxBot
 
-Bot 1/7
-Classe : awele.bot.competitor.minmaxH3.MinMaxBot
-Instanciation du bot "MinMaxH3"
-Nom du bot : MinMaxH3
+Bot 1/4
+Classe : awele.bot.competitor.minmaxalphabetatravers.MinMaxBot
+Instanciation du bot "AlphaBetaHMathis"
+Nom du bot : AlphaBetaHMathis
+Temps d'apprentissage : 00:00:01.393
+Duree d'une prise de decision : 00:00:00.038
+Usage memoire : 4,5 KiB
+Usage memoire maximum : 91,1 MiB
+
+Bot 2/4
+Classe : awele.bot.competitor.minmaxalphabetaprofondeurame.MinMaxBot
+Instanciation du bot "AlphaBetaDiffScoreP8"
+Nom du bot : AlphaBetaDiffScoreP8
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.191
-Usage memoire : 3,3 KiB
-Usage memoire maximum : 21,5 MiB
+Duree d'une prise de decision : 00:00:00.042
+Usage memoire : 1,3 KiB
+Usage memoire maximum : 12,0 MiB
 
-Bot 2/7
+Bot 3/4
 Classe : awele.bot.competitor.minmaxH4.MinMaxBot
 Instanciation du bot "MinMaxH4"
 Nom du bot : MinMaxH4
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.162
+Duree d'une prise de decision : 00:00:00.065
 Usage memoire : 1,2 KiB
-Usage memoire maximum : 40,0 MiB
+Usage memoire maximum : 46,0 MiB
 
-Bot 3/7
-Classe : awele.bot.competitor.last.LastBot
-Instanciation du bot "Last"
-Nom du bot : Last
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.000
-<<<<<<< HEAD
-Usage memoire : 2,3 KiB
-Usage memoire maximum : 476,9 KiB
-=======
-Usage memoire : 608 B
-Usage memoire maximum : 389,7 KiB
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
-
-Bot 4/7
-Classe : awele.bot.competitor.minmaxH1.MinMaxBot
-Instanciation du bot "MinMaxH1"
-Nom du bot : MinMaxH1
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.104
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 66,0 MiB
-
-Bot 5/7
-Classe : awele.bot.competitor.minmaxH2.MinMaxBot
-Instanciation du bot "MinMaxH2"
-Nom du bot : MinMaxH2
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.119
-Usage memoire : 1,4 KiB
-Usage memoire maximum : 68,5 MiB
-
-Bot 6/7
+Bot 4/4
 Classe : awele.bot.competitor.minmax.MinMaxBot
-Instanciation du bot "MinMax"
-Nom du bot : MinMax
+Instanciation du bot "MinMaxDiffScore"
+Nom du bot : MinMaxDiffScore
 Temps d'apprentissage : 00:00:00.000
-<<<<<<< HEAD
 Duree d'une prise de decision : 00:00:00.058
-Usage memoire : 1,7 KiB
-Usage memoire maximum : 91,0 MiB
-=======
-Duree d'une prise de decision : 00:00:00.116
 Usage memoire : 1,2 KiB
-Usage memoire maximum : 13,0 MiB
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
+Usage memoire maximum : 150,0 MiB
 
-Bot 7/7
-Classe : awele.bot.competitor.minmaxlast.MinMaxBot
-Instanciation du bot "MinMaxInverte"
-Nom du bot : MinMaxInverte
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.136
-Usage memoire : 1,3 KiB
-<<<<<<< HEAD
-Usage memoire maximum : 132,0 MiB
-=======
-Usage memoire maximum : 57,0 MiB
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
-
-<<<<<<< HEAD
-3 bots ont ete instancies
-Duree du chargement : 00:00:04.521
-=======
-7 bots ont ete instancies
-Duree du chargement : 00:00:32.059
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
+4 bots ont ete instancies
+Duree du chargement : 00:00:09.776
 Memoire utilisee : 1,3 MiB
 
 Que le championnat commence !
 
-<<<<<<< HEAD
-Affrontement 1/3
-Last vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagne
-Nombre de coups joues : 55.05 par match
-Duree : 00:00:01.835 par match
-=======
-Affrontement 1/21
-MinMaxH3 vs. MinMaxH4
-Score : 0.57 - 2.43
+Affrontement 1/6
+AlphaBetaHMathis vs. AlphaBetaDiffScoreP8
+Score : 1.0 - 1.9
+AlphaBetaDiffScoreP8 a gagne
+Nombre de coups joues : 93.6 par match
+Duree : 00:00:02.627 par match
+Memoire utilisee : 1,3 MiB
+
+Affrontement 2/6
+AlphaBetaHMathis vs. MinMaxH4
+Score : 1.5 - 1.5
+Égalite
+Nombre de coups joues : 115.95 par match
+Duree : 00:00:04.779 par match
+Memoire utilisee : 1,4 MiB
+
+Affrontement 3/6
+AlphaBetaHMathis vs. MinMaxDiffScore
+Score : 3.0 - 0.0
+AlphaBetaHMathis a gagne
+Nombre de coups joues : 80.9 par match
+Duree : 00:00:03.232 par match
+Memoire utilisee : 1,4 MiB
+
+Affrontement 4/6
+AlphaBetaDiffScoreP8 vs. MinMaxH4
+Score : 1.2 - 1.8
 MinMaxH4 a gagne
-Nombre de coups joues : 63.49 par match
-Duree : 00:00:03.679 par match
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
+Nombre de coups joues : 113.6 par match
+Duree : 00:00:05.063 par match
 Memoire utilisee : 1,4 MiB
 
-Affrontement 2/21
-MinMaxH3 vs. Last
-Score : 2.98 - 0.01
-MinMaxH3 a gagne
-Nombre de coups joues : 84.565 par match
-Duree : 00:00:02.937 par match
+Affrontement 5/6
+AlphaBetaDiffScoreP8 vs. MinMaxDiffScore
+Score : 2.4 - 0.6
+AlphaBetaDiffScoreP8 a gagne
+Nombre de coups joues : 70.65 par match
+Duree : 00:00:02.747 par match
 Memoire utilisee : 1,4 MiB
 
-Affrontement 3/21
-MinMaxH3 vs. MinMaxH1
-Score : 0.0 - 3.0
-MinMaxH1 a gagne
-Nombre de coups joues : 50.36 par match
-Duree : 00:00:02.351 par match
+Affrontement 6/6
+MinMaxH4 vs. MinMaxDiffScore
+Score : 2.7 - 0.3
+MinMaxH4 a gagne
+Nombre de coups joues : 116.35 par match
+Duree : 00:00:06.045 par match
 Memoire utilisee : 1,4 MiB
 
-Affrontement 4/21
-MinMaxH3 vs. MinMaxH2
-Score : 2.53 - 0.43
-MinMaxH3 a gagne
-Nombre de coups joues : 55.79 par match
-Duree : 00:00:02.385 par match
-Memoire utilisee : 1,3 MiB
-
-Affrontement 5/21
-MinMaxH3 vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagne
-Nombre de coups joues : 52.945 par match
-Duree : 00:00:02.340 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 6/21
-MinMaxH3 vs. MinMaxInverte
-Score : 0.0 - 3.0
-MinMaxInverte a gagne
-<<<<<<< HEAD
-Nombre de coups joues : 54.6 par match
-Duree : 00:00:01.805 par match
-Memoire utilisee : 1,6 MiB
-=======
-Nombre de coups joues : 51.13 par match
-Duree : 00:00:02.290 par match
-Memoire utilisee : 1,3 MiB
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
-
-<<<<<<< HEAD
-Affrontement 3/3
-MinMax vs. MinMaxInverte
-Score : 1.35 - 1.65
-MinMaxInverte a gagne
-Nombre de coups joues : 75.285 par match
-Duree : 00:00:03.548 par match
-Memoire utilisee : 1,5 MiB
-
-Duree du championnat : 00:23:58.023
+Duree du championnat : 00:08:10.007
 
 Scores finaux :
-Last : 0.0
-MinMax : 4.35
-MinMaxInverte : 4.65
+AlphaBetaHMathis : 5.5
+AlphaBetaDiffScoreP8 : 5.5
+MinMaxH4 : 6.0
+MinMaxDiffScore : 0.9
 
 Rangs :
-1. MinMaxInverte : 4.65
-2. MinMax : 4.35
-3. Last : 0.0
-=======
-Affrontement 7/21
-MinMaxH4 vs. Last
-Score : 3.0 - 0.0
-MinMaxH4 a gagne
-Nombre de coups joues : 81.365 par match
-Duree : 00:00:02.431 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 8/21
-MinMaxH4 vs. MinMaxH1
-Score : 0.03 - 2.97
-MinMaxH1 a gagne
-Nombre de coups joues : 58.87 par match
-Duree : 00:00:02.569 par match
-Memoire utilisee : 1,3 MiB
-
-Affrontement 9/21
-MinMaxH4 vs. MinMaxH2
->>>>>>> branch 'main' of https://github.com/Fronotono/projet_ia_2024.git
+1. MinMaxH4 : 6.0
+2. AlphaBetaDiffScoreP8 : 5.5
+3. AlphaBetaHMathis : 5.5
+4. MinMaxDiffScore : 0.9

@@ -36,10 +36,12 @@ public final class Main extends OutputWriter
     //private static final Tournament TOURNAMENT = Tournament.ALL;
     private static final Tournament TOURNAMENT = Tournament.COMPETITORS;
     //private static final Tournament TOURNAMENT = Tournament.CHAMPIONS;
-    private static final int NB_RUNS = 100;
+    //private static final int NB_RUNS = 100;
+    //private static final int NB_RUNS = 50;
+    private static final int NB_RUNS = 10;
     //private static final int NB_RUNS = 1;
     private static final int MAX_LEARNING_TIME = 1000 * 60 * 60 * 1; // 1 h
-    private static final int MAX_DECISION_TIME = 200; // 100 ms
+    private static final int MAX_DECISION_TIME = 100; // 100 ms
     private static final int MAX_MEMORY = 1024 * 1024 * 64; // 64 MiB
     private static final int MAX_TOTAL_MEMORY = 1024 * 1024 * 1024; // 1 GiB
 
@@ -208,7 +210,7 @@ public final class Main extends OutputWriter
             }
             catch (Exception e)
             {
-                this.printDisqual (subClass.getName (), "ne peut pas être instancie");
+                this.printDisqual (subClass.getName (), "ne peut pas etre instancie");
                 this.print (e);
                 e.printStackTrace();
                 this.print ();
