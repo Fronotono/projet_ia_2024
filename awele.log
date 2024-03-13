@@ -1,217 +1,86 @@
 Memoire totale : 4,0 GiB
 Instanciation du bot "Random"
 4 classes ont ete trouvees
-class awele.bot.competitor.minmaxalphabetatravers.MinMaxBot
-class awele.bot.competitor.minmaxalphabetaprofondeurame.MinMaxBot
+class awele.bot.competitor.AB_MattisDroite.MinMaxBot
 class awele.bot.competitor.minmaxH4.MinMaxBot
-class awele.bot.competitor.minmax.MinMaxBot
+class awele.bot.competitor.AB_P8.MinMaxBot
+class awele.bot.competitor.AB_MattisDroiteProfondeurVariable.MinMaxBot
 
 Bot 1/4
-Classe : awele.bot.competitor.minmaxalphabetatravers.MinMaxBot
-Instanciation du bot "AlphaBetaHMathis"
-Nom du bot : AlphaBetaHMathis
-Auteur(s) : Theo COLLET
-Temps d'apprentissage : 00:34:21.238
-Duree d'une prise de decision : 00:00:00.017
-Usage memoire : 6,0 KiB
-Usage memoire maximum : 61,8 MiB
-
-Bot 2/4
-Classe : awele.bot.competitor.minmaxalphabetaprofondeurame.MinMaxBot
-Instanciation du bot "AlphaBetaDiffScoreP8"
-Nom du bot : AlphaBetaDiffScoreP8
+Classe : awele.bot.competitor.AB_MattisDroite.MinMaxBot
+Instanciation du bot "MattisDroite"
+Nom du bot : MattisDroite
 Auteur(s) : Theo COLLET
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.056
-Usage memoire : 1,3 KiB
-Usage memoire maximum : 88,0 MiB
+Duree d'une prise de decision : 00:00:00.014
+Usage memoire : 4,3 KiB
+Usage memoire maximum : 4,0 MiB
 
-Bot 3/4
+Bot 2/4
 Classe : awele.bot.competitor.minmaxH4.MinMaxBot
 Instanciation du bot "MinMaxH4"
 Nom du bot : MinMaxH4
 Auteur(s) : Lorine BIGONI
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.080
+Duree d'une prise de decision : 00:00:00.081
 Usage memoire : 1,2 KiB
-Usage memoire maximum : 36,0 MiB
-
-Bot 4/4
-Classe : awele.bot.competitor.minmax.MinMaxBot
-Instanciation du bot "MinMaxDiffScore"
-Nom du bot : MinMaxDiffScore
-Auteur(s) : Alexandre Blansche
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.086
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 67,0 MiB
-
-4 bots ont ete instancies
-Duree du chargement : 00:34:31.091
-Memoire utilisee : 1,3 MiB
-
-Que le championnat commence !
-
-Affrontement 1/6
-AlphaBetaHMathis vs. AlphaBetaDiffScoreP8
-Score : 1.9 - 1.0
-AlphaBetaHMathis a gagne
-Nombre de coups joues : 91.9 par match
-Duree : 00:00:02.941 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 2/6
-AlphaBetaHMathis vs. MinMaxH4
-Score : 1.3 - 1.6
-MinMaxH4 a gagne
-Nombre de coups joues : 112.5 par match
-Duree : 00:00:05.661 par match
-Memoire utilisee : 1,5 MiB
-
-Affrontement 3/6
-AlphaBetaHMathis vs. MinMaxDiffScore
-Score : 2.4 - 0.6
-AlphaBetaHMathis a gagne
-Nombre de coups joues : 76.2 par match
-Duree : 00:00:03.222 par match
-Memoire utilisee : 1,5 MiB
-
-Affrontement 4/6
-AlphaBetaDiffScoreP8 vs. MinMaxH4
-Score : 0.9 - 2.1
-MinMaxH4 a gagne
-Nombre de coups joues : 122.5 par match
-Duree : 00:00:06.585 par match
-Memoire utilisee : 1,5 MiB
-
-Affrontement 5/6
-AlphaBetaDiffScoreP8 vs. MinMaxDiffScore
-Score : 2.4 - 0.6
-AlphaBetaDiffScoreP8 a gagne
-Nombre de coups joues : 76.95 par match
-Duree : 00:00:04.974 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 6/6
-MinMaxH4 vs. MinMaxDiffScore
-Score : 2.4 - 0.6
-MinMaxH4 a gagne
-Nombre de coups joues : 108.55 par match
-Duree : 00:00:06.929 par match
-Memoire utilisee : 1,5 MiB
-
-Duree du championnat : 00:10:06.411
-
-Scores finaux :
-AlphaBetaHMathis : 5.6
-AlphaBetaDiffScoreP8 : 4.3
-MinMaxH4 : 6.1
-MinMaxDiffScore : 1.8
-
-Rangs :
-1. MinMaxH4 : 6.1
-2. AlphaBetaHMathis : 5.6
-3. AlphaBetaDiffScoreP8 : 4.3
-4. MinMaxDiffScore : 1.8
-Temps d'apprentissage : 00:42:24.234
-Duree d'une prise de decision : 00:00:00.011
-Usage memoire : 6,5 KiB
-Usage memoire maximum : 132,5 MiB
-
-Bot 2/4
-Classe : awele.bot.competitor.minmaxalphabetaprofondeurame.MinMaxBot
-Instanciation du bot "AlphaBetaDiffScoreP8"
-Nom du bot : AlphaBetaDiffScoreP8
-Auteur(s) : Theo COLLET
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.034
-Usage memoire : 1,7 KiB
-Usage memoire maximum : 69,0 MiB
+Usage memoire maximum : 62,0 MiB
 
 Bot 3/4
-Classe : awele.bot.competitor.minmaxH4.MinMaxBot
-Instanciation du bot "MinMaxH4"
-Nom du bot : MinMaxH4
-Auteur(s) : Lorine BIGONI
+Classe : awele.bot.competitor.AB_P8.MinMaxBot
+Instanciation du bot "AB_DS_P8"
+Nom du bot : AB_DS_P8
+Auteur(s) : Theo COLLET
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.102
+Duree d'une prise de decision : 00:00:00.043
 Usage memoire : 1,2 KiB
-Usage memoire maximum : 98,0 MiB
+Usage memoire maximum : 153,0 MiB
 
 Bot 4/4
-Classe : awele.bot.competitor.minmax.MinMaxBot
-Instanciation du bot "MinMaxDiffScore"
-Nom du bot : MinMaxDiffScore
-Auteur(s) : Alexandre Blansche
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.099
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 121,0 MiB
-
-4 bots ont ete instancies
-Duree du chargement : 00:42:36.511
-Memoire utilisee : 1,3 MiB
-
-Que le championnat commence !
-
-Affrontement 1/6
-AlphaBetaHMathis vs. AlphaBetaDiffScoreP8
-Score : 2.4 - 0.6
-AlphaBetaHMathis a gagne
-Nombre de coups joues : 84.9 par match
-Duree : 00:00:01.628 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 2/6
-AlphaBetaHMathis vs. MinMaxH4
-Score : 1.2 - 1.8
-MinMaxH4 a gagne
-Nombre de coups joues : 92.2 par match
-Duree : 00:00:03.683 par match
-Memoire utilisee : 1,4 MiB
-
-Affrontement 3/6
-AlphaBetaHMathis vs. MinMaxDiffScore
-Score : 2.4 - 0.6
-AlphaBetaHMathis a gagne
-Nombre de coups joues : 71.0 par match
-Duree : 00:00:02.113 par match
+Classe : awele.bot.competitor.AB_MattisDroiteProfondeurVariable.MinMaxBot
+Instanciation du bot "MattisDroiteProfondeurVariable"
+Nom du bot : MattisDroiteProfondeurVariable
+Auteur(s) : Theo COLLET
+Score : 0.3 - 2.7
+MattisDroiteProfondeurVariable a gagne
+Nombre de coups joues : 89.0 par match
+Duree : 00:00:14.531 par match
 Memoire utilisee : 1,5 MiB
 
 Affrontement 4/6
-AlphaBetaDiffScoreP8 vs. MinMaxH4
+MinMaxH4 vs. AB_DS_P8
 Score : 1.5 - 1.5
 Égalite
-Nombre de coups joues : 116.3 par match
-Duree : 00:00:06.882 par match
+Nombre de coups joues : 102.05 par match
+Duree : 00:00:04.602 par match
 Memoire utilisee : 1,4 MiB
 
 Affrontement 5/6
-AlphaBetaDiffScoreP8 vs. MinMaxDiffScore
-Score : 2.1 - 0.9
-AlphaBetaDiffScoreP8 a gagne
-Nombre de coups joues : 77.2 par match
-Duree : 00:00:04.104 par match
-Memoire utilisee : 1,5 MiB
+MinMaxH4 vs. MattisDroiteProfondeurVariable
+Score : 1.2 - 1.8
+MattisDroiteProfondeurVariable a gagne
+Nombre de coups joues : 98.35 par match
+Duree : 00:00:13.173 par match
+Memoire utilisee : 1,4 MiB
 
 Affrontement 6/6
-MinMaxH4 vs. MinMaxDiffScore
-Score : 2.7 - 0.3
-MinMaxH4 a gagne
-Nombre de coups joues : 99.95 par match
-Duree : 00:00:07.372 par match
+AB_DS_P8 vs. MattisDroiteProfondeurVariable
+Score : 0.3 - 2.7
+MattisDroiteProfondeurVariable a gagne
+Nombre de coups joues : 102.0 par match
+Duree : 00:00:17.077 par match
 Memoire utilisee : 1,5 MiB
 
-Duree du championnat : 00:08:35.789
+Duree du championnat : 00:18:24.373
 
 Scores finaux :
-AlphaBetaHMathis : 6.0
-AlphaBetaDiffScoreP8 : 4.2
-MinMaxH4 : 6.0
-MinMaxDiffScore : 1.8
+MattisDroite : 3.9
+MinMaxH4 : 4.2
+AB_DS_P8 : 2.7
+MattisDroiteProfondeurVariable : 7.2
 
 Rangs :
-1. MinMaxH4 : 6.0
-2. AlphaBetaHMathis : 6.0
-3. AlphaBetaDiffScoreP8 : 4.2
-4. MinMaxDiffScore : 1.8
+1. MattisDroiteProfondeurVariable : 7.2
+2. MinMaxH4 : 4.2
+3. MattisDroite : 3.9
+4. AB_DS_P8 : 2.7

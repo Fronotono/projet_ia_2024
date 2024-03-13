@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmax;
+package awele.bot.competitor.AB;
 
 import awele.bot.Bot;
 import awele.bot.CompetitorBot;
@@ -20,8 +20,8 @@ public class MinMaxBot extends Bot
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MinMaxDiffScore");
-        this.addAuthor ("Alexandre Blansche");
+        this.setBotName ("AlphaBetaDiffScoreP6");
+        this.addAuthor ("Theo COLLET");
     }
 
     /**

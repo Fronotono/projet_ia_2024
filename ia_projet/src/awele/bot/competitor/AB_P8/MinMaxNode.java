@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabeta;
+package awele.bot.competitor.AB_P8;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -28,7 +28,7 @@ public abstract class MinMaxNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public MinMaxNode (Board board, int depth, double alpha, double beta)
+    public MinMaxNode (Board board, int depth, double alpha, double beta,int realDepth)
     {
         /* On cree un tableau des evaluations des coups a jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -58,10 +58,10 @@ public abstract class MinMaxNode
                     else
                     {
                         /* Si la profondeur maximale n'est pas atteinte */
-                        if (depth < MinMaxNode.maxDepth)
+                        if (depth < maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta);
+                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, realDepth);
                             /* On recupère l'evaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
                         }
@@ -145,7 +145,7 @@ public abstract class MinMaxNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta);
+    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta,int realDepth);
 
     /**
      * L'evaluation du noeud

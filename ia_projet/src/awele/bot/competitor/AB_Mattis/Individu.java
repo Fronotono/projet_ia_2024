@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabetatravers;
+package awele.bot.competitor.AB_Mattis;
 
 import java.util.Random;
 

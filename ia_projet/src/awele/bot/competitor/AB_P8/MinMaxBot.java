@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabetaprofondeurame;
+package awele.bot.competitor.AB_P8;
 
 import awele.bot.Bot;
 import awele.bot.CompetitorBot;
@@ -14,13 +14,14 @@ public class MinMaxBot extends CompetitorBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 8;
+    private int realDepth;
 	
     /**
      * @throws InvalidBotException
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("AlphaBetaDiffScoreP8");
+        this.setBotName ("AB_DS_P8");
         this.addAuthor ("Theo COLLET");
     }
 
@@ -30,6 +31,7 @@ public class MinMaxBot extends CompetitorBot
     @Override
     public void initialize ()
     {
+    	realDepth=0;
     }
 
     /**
@@ -47,7 +49,8 @@ public class MinMaxBot extends CompetitorBot
     public double [] getDecision (Board board)
     {
         MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
-        return new MaxNode (board).getDecision ();
+        realDepth++;
+        return new MaxNode (board,realDepth).getDecision ();
     }
 
     /**

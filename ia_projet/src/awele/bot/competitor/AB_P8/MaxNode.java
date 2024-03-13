@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabeta;
+package awele.bot.competitor.AB_P8;
 
 import awele.core.Board;
 
@@ -12,20 +12,21 @@ public class MaxNode extends MinMaxNode
      * Constructeur pour un noeud initial
      * @param board La situation de jeu pour laquelle il faut prendre une decision
      */
-    MaxNode (Board board)
+    MaxNode (Board board,int realDepth)
     {
-        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE);
+        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, realDepth);
     }
 
     /**
      * Constructeur d'un noeud interne
      * @param board La situation de jeu pour le noeud
      * @param depth La profondeur du noeud
+     * @param realDepth 
      * @param alphabeta Le seuil pour la coupe alpha-beta
      */
-    MaxNode (Board board, int depth, double alpha, double beta)
+    MaxNode (Board board, int depth, double alpha, double beta, int realDepth)
     {
-        super (board, depth, alpha, beta);
+        super (board, depth, alpha, beta, realDepth);
     }
 
     /**
@@ -63,9 +64,9 @@ public class MaxNode extends MinMaxNode
      * @return Un noeud MinNode du niveau suivant
      */
     @Override
-    protected MinMaxNode getNextNode (Board board, int depth, double alpha, double beta)
+    protected MinMaxNode getNextNode (Board board, int depth, double alpha, double beta,int realDepth)
     {
-        return new MinNode (board, depth, alpha, beta);
+        return new MinNode (board, depth, alpha, beta,realDepth);
     }
 
     /**

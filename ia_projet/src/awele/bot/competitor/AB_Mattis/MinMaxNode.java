@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabetaprofondeurame;
+package awele.bot.competitor.AB_Mattis;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -20,6 +20,9 @@ public abstract class MinMaxNode
 
     /** Évaluation des coups selon MinMax */
     private double [] decision;
+    
+    //* Poids des parametre de l'heuristique *//
+	private int poids[];
 
     /**
      * Constructeur... 
@@ -28,8 +31,9 @@ public abstract class MinMaxNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public MinMaxNode (Board board, int depth, double alpha, double beta)
+    public MinMaxNode (Board board, int depth, double alpha, double beta, int[] poids)
     {
+        this.poids = poids;
         /* On cree un tableau des evaluations des coups a jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'evaluation courante */
@@ -53,7 +57,7 @@ public abstract class MinMaxNode
                     if ((score < 0) ||
                             (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
                             (copy.getNbSeeds () <= 6))
-                        this.decision [i] = this.diffScore (copy);
+                        this.decision [i] = this.heuristique (copy);
                     /* Sinon, on explore les coups suivants */
                     else
                     {
@@ -61,13 +65,13 @@ public abstract class MinMaxNode
                         if (depth < maxDepth)
                         {
                             /* On construit le noeud suivant */
-                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta);
+                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, poids);
                             /* On recupère l'evaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
                         }
                         /* Sinon (si la profondeur maximale est atteinte), on evalue la situation actuelle */
                         else
-                            this.decision [i] = this.diffScore (copy);
+                            this.decision [i] = this.heuristique (copy);
                     }
                     /* L'evaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
@@ -97,11 +101,32 @@ public abstract class MinMaxNode
     {
         MinMaxNode.maxDepth = maxDepth;
         MinMaxNode.player = board.getCurrentPlayer ();
+
     }
 
     private int diffScore (Board board)
     {
         return board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player));
+    }
+    
+    private int heuristique(Board board)
+    {
+    	int nbTrouVide = 0, nbTrouVideAdv = 0;
+    	int nbTrou1ou2 = 0, nbTrou1ou2Adv = 0;
+    	int nbKrou = 0, nbKrouAdv = 0;
+    	for(int i = 0; i <= Board.NB_HOLES/2; i++)
+    	{
+    		if(board.getPlayerHoles()[i] == 0)nbTrouVide++;
+    		else if(board.getPlayerHoles()[i] < 3)nbTrou1ou2++;
+    		else if(board.getPlayerHoles()[i] > 11)nbKrou++;
+    		if(board.getOpponentHoles()[i] == 0)nbTrouVideAdv++;
+    		else if(board.getOpponentHoles()[i] < 3)nbTrouVideAdv++;
+    		else if(board.getOpponentHoles()[i] > 11)nbTrouVideAdv++;
+    	}
+    	
+    	int score = board.getScore(MinMaxNode.player), scoreAdv = board.getScore(Board.otherPlayer(MinMaxNode.player));
+    	
+    	return score*10+scoreAdv*-10+nbTrouVide*poids[0]+nbTrouVideAdv*poids[1]+nbTrou1ou2*poids[2]+nbTrou1ou2Adv*poids[3]+nbKrou*poids[4]+nbKrouAdv*poids[5];
     }
 
     /**
@@ -145,7 +170,7 @@ public abstract class MinMaxNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta);
+    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta, int[] poids);
 
     /**
      * L'evaluation du noeud

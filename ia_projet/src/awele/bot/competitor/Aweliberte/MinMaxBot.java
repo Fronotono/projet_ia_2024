@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabeta;
+package awele.bot.competitor.Aweliberte;
 
 import awele.bot.Bot;
 import awele.bot.CompetitorBot;
@@ -13,15 +13,15 @@ import awele.core.InvalidBotException;
 public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 8;
 	
     /**
      * @throws InvalidBotException
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("AlphaBetaDiffScoreP6");
-        this.addAuthor ("Theo COLLET");
+        this.setBotName ("Aweliberte");
+        this.addAuthor ("Other");
     }
 
     /**

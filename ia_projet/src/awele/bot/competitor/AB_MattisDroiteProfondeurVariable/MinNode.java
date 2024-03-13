@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxalphabetatravers;
+package awele.bot.competitor.AB_MattisDroiteProfondeurVariable;
 
 import awele.core.Board;
 
@@ -12,9 +12,9 @@ public class MinNode extends MinMaxNode
      * Constructeur pour un noeud initial
      * @param board La situation de jeu pour laquelle il faut prendre une decision
      */
-    MinNode (Board board, int[] poids)
+    MinNode (Board board, int[] poids, int realDepth)
     {
-        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, poids);
+        this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE, poids, realDepth);
     }
 
     /**
@@ -24,9 +24,9 @@ public class MinNode extends MinMaxNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    MinNode (Board board, int depth, double alpha, double beta, int[] poids)
+    MinNode (Board board, int depth, double alpha, double beta, int[] poids, int realDepth)
     {
-        super (board, depth, alpha, beta, poids);
+        super (board, depth, alpha, beta, poids, realDepth);
     }
 
     /**
@@ -64,9 +64,9 @@ public class MinNode extends MinMaxNode
      * @return Un noeud MaxNode du niveau suivant
      */
     @Override
-    protected MinMaxNode getNextNode (Board board, int depth, double alpha, double beta, int[] poids)
+    protected MinMaxNode getNextNode (Board board, int depth, double alpha, double beta, int[] poids, int realDepth)
     {
-        return new MaxNode (board, depth, alpha, beta, poids);
+        return new MaxNode (board, depth, alpha, beta, poids, realDepth);
     }
 
     /**
