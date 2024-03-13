@@ -52,7 +52,7 @@ public class MinMaxBot extends CompetitorBot
     	System.out.println("Learn");
     	try {
 	    	long start = System.currentTimeMillis();
-
+	    	int nbGen = 0;
 	    	
 	    	int taillePop = 40, poidsMin = -20, poidsMax = 20, nbCombattants = 5, nbMatch = 2;
 	    	double tauxMutation = 0.2;
@@ -69,7 +69,7 @@ public class MinMaxBot extends CompetitorBot
 	    	}
 	    	
 	    	//competition
-	    	while(System.currentTimeMillis() - start < (1000 * 60 * 30)) //30minutes
+	    	while(System.currentTimeMillis() - start < (1000 * 60 * 40)) //30minutes
 	    	{
 	    		System.out.println("Nouvelle Generation t="+(System.currentTimeMillis() - start)/1000/60+"min");
 	    		for(int i = 0; i < nbCombattants; i++) {
@@ -96,16 +96,17 @@ public class MinMaxBot extends CompetitorBot
 	    		//Verification du meilleur
 	    		if(individus[0].fitness < individus[1].fitness)individus[0] = individus[1];
 	    		//REPOPULATION
-	    		Individu m = individus[0];
 	    		Individu[] nouvellePop = new Individu[taillePop];
 	    		for(int i = 1; i < taillePop; i++) {
 	    			nouvellePop[i] = new Individu(individus[random(0,taillePop/2)],individus[random(0,taillePop/2)]);
 	    		}
+	    		nouvellePop[0] = individus[0];
 	    		individus = nouvellePop;
-	    		individus[0] = m;
 	    		System.out.println(individus[0]);
 	    		individus[0].fitness = 0;
+	    		nbGen++;
 	    	}
+	    	System.out.println("Individu de reference :"+individus[0]+"\ntrouvé en "+nbGen+" generatins");
 	    	this.poids = individus[0].poids;
     	
 		} catch (InvalidBotException e) {
