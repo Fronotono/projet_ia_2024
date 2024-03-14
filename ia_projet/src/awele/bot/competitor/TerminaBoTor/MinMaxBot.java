@@ -27,7 +27,7 @@ public class MinMaxBot extends CompetitorBot
 	private static final int NB_FIGHTERS = 5;
 	
     private int[]poids;
-    private int realDepth;
+    private int realDepth; // Permet de connaitre la profondeur dans l'arbre de jeu entier 
 	
 	
     /**
