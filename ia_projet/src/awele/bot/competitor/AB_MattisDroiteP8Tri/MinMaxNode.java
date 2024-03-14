@@ -1,4 +1,6 @@
-package awele.bot.competitor.AB_MattisDroite;
+package awele.bot.competitor.AB_MattisDroiteP8Tri;
+
+import java.util.Map;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -15,6 +17,8 @@ public abstract class MinMaxNode
     /** Profondeur maximale */
     private static int maxDepth;
 
+	private static int budget;
+
     /** L'evaluation du noeud */
     private double evaluation;
 
@@ -22,7 +26,9 @@ public abstract class MinMaxNode
     private double [] decision;
     
     //* Poids des parametre de l'heuristique *//
-	private int poids[];
+	private int[] poids;
+	
+	private Map<Integer,Integer> categories;
 
     /**
      * Constructeur... 
@@ -101,10 +107,12 @@ public abstract class MinMaxNode
 
     /**
      * Initialisation
+     * @param budget 
      */
-    protected static void initialize(Board board, int maxDepth)
+    protected static void initialize(Board board, int maxDepth, int budget)
     {
         MinMaxNode.maxDepth = maxDepth;
+        MinMaxNode.budget = budget;
         MinMaxNode.player = board.getCurrentPlayer ();
         
     }

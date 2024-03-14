@@ -1,4 +1,6 @@
-package awele.bot.competitor.AB_MattisDroite;
+package awele.bot.competitor.minmaxH4Droite;
+
+import java.util.Random;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -21,8 +23,8 @@ public abstract class MinMaxNode
     /** Évaluation des coups selon MinMax */
     private double [] decision;
     
-    //* Poids des parametre de l'heuristique *//
-	private int poids[];
+    /** taille maximum **/
+    static final int MAX_WEIGHT = 5;
 
     /**
      * Constructeur... 
@@ -31,14 +33,12 @@ public abstract class MinMaxNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
-    public MinMaxNode (Board board, int depth, double alpha, double beta, int[] poids, int realDepth)
+    public MinMaxNode (Board board, int depth, double alpha, double beta, int realDepth)
     {
     	if(realDepth == 1) {
     		decision = new double []{0,0,0,0,0,1};
-    		//System.out.println("PremierCoupdelaPartie");	
-    	} else {
-	        this.poids = poids;
-	        /* On cree un tableau des evaluations des coups a jouer pour chaque situation possible */
+    	}else {
+	        /* On cree un tableau des evaluations des coups à jouer pour chaque situation possible */
 	        this.decision = new double [Board.NB_HOLES];
 	        /* Initialisation de l'evaluation courante */
 	        this.evaluation = this.worst ();
@@ -56,26 +56,26 @@ public abstract class MinMaxNode
 	                {
 	                    int score = copy.playMoveSimulationScore (copy.getCurrentPlayer (), decision);
 	                    copy = copy.playMoveSimulationBoard (copy.getCurrentPlayer (), decision);
-	                    /* Si la nouvelle situation de jeu est un coup qui met fin a la partie,
+	                    /* Si la nouvelle situation de jeu est un coup qui met fin à la partie,
 	                       on evalue la situation actuelle */   
 	                    if ((score < 0) ||
 	                            (copy.getScore (Board.otherPlayer (copy.getCurrentPlayer ())) >= 25) ||
 	                            (copy.getNbSeeds () <= 6))
-	                        this.decision [i] = this.heuristique (copy);
+	                        this.decision [i] = this.diffScore (copy);
 	                    /* Sinon, on explore les coups suivants */
 	                    else
 	                    {
 	                        /* Si la profondeur maximale n'est pas atteinte */
-	                        if (depth < maxDepth)
+	                        if (depth < MinMaxNode.maxDepth)
 	                        {
 	                            /* On construit le noeud suivant */
-	                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, poids, realDepth+1);
+	                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, realDepth);
 	                            /* On recupère l'evaluation du noeud fils */
 	                            this.decision [i] = child.getEvaluation ();
 	                        }
 	                        /* Sinon (si la profondeur maximale est atteinte), on evalue la situation actuelle */
 	                        else
-	                            this.decision [i] = this.heuristique (copy);
+	                            this.decision [i] = this.diffScore (copy);
 	                    }
 	                    /* L'evaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
 	                    this.evaluation = this.minmax (this.decision [i], this.evaluation);
@@ -86,7 +86,7 @@ public abstract class MinMaxNode
 	                    {
 	                        alpha = this.alpha (this.evaluation, alpha);
 	                        beta = this.beta (this.evaluation, beta);
-	                    }      
+	                    }                        
 	                }
 	                catch (InvalidBotException e)
 	                {
@@ -102,37 +102,26 @@ public abstract class MinMaxNode
     /**
      * Initialisation
      */
-    protected static void initialize(Board board, int maxDepth)
+    protected static void initialize (Board board, int maxDepth)
     {
         MinMaxNode.maxDepth = maxDepth;
         MinMaxNode.player = board.getCurrentPlayer ();
-        
     }
 
-    private int diffScore (Board board)
+    
+    
+    private int diffScore (Board board) throws InvalidBotException
     {
-        return board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player));
+    	int W1=4, W2=2, W3=2;
+        int seeds_in_opponents_side = board.getOpponentSeeds();
+        int seeds_in_my_side = board.getPlayerSeeds();
+        int score_player = board.getScore (MinMaxNode.player);
+        int score_opponents = board.getScore (Board.otherPlayer (MinMaxNode.player));
+        int extra_moves = board.playMoveSimulationScore(MinMaxNode.player, decision); //voir sur Heuristic3 getProbableExtraMoves
+        return W1 * (score_player - score_opponents) + W2 * (seeds_in_my_side - seeds_in_opponents_side) + W3 * extra_moves;
     }
     
-    private int heuristique(Board board)
-    {
-    	int nbTrouVide = 0, nbTrouVideAdv = 0;
-    	int nbTrou1ou2 = 0, nbTrou1ou2Adv = 0;
-    	int nbKrou = 0, nbKrouAdv = 0;
-    	for(int i = 0; i <= Board.NB_HOLES/2; i++)
-    	{
-    		if(board.getPlayerHoles()[i] == 0)nbTrouVide++;
-    		else if(board.getPlayerHoles()[i] < 3)nbTrou1ou2++;
-    		else if(board.getPlayerHoles()[i] > 11)nbKrou++;
-    		if(board.getOpponentHoles()[i] == 0)nbTrouVideAdv++;
-    		else if(board.getOpponentHoles()[i] < 3)nbTrouVideAdv++;
-    		else if(board.getOpponentHoles()[i] > 11)nbTrouVideAdv++;
-    	}
-    	
-    	int score = board.getScore(MinMaxNode.player), scoreAdv = board.getScore(Board.otherPlayer(MinMaxNode.player));
-    	
-    	return score*10+scoreAdv*-10+nbTrouVide*poids[0]+nbTrouVideAdv*poids[1]+nbTrou1ou2*poids[2]+nbTrou1ou2Adv*poids[3]+nbKrou*poids[4]+nbKrouAdv*poids[5];
-    }
+    
 
     /**
      * Mise à jour de alpha
@@ -175,7 +164,7 @@ public abstract class MinMaxNode
      * @param beta Le seuil pour la coupe beta
      * @return Un noeud (MinNode ou MaxNode) du niveau suivant
      */
-    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta, int[] poids, int realDepth);
+    protected abstract MinMaxNode getNextNode (Board board, int depth, double alpha, double beta,int realDepth);
 
     /**
      * L'evaluation du noeud

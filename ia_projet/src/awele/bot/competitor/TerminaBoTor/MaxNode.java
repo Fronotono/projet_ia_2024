@@ -1,4 +1,4 @@
-package awele.bot.competitor.AB_MattisDroiteProfondeurVariable;
+package awele.bot.competitor.TerminaBoTor;
 
 import awele.core.Board;
 

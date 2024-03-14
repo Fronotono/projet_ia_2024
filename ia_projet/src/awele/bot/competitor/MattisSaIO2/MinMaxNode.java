@@ -1,4 +1,4 @@
-package awele.bot.competitor.AB_MattisDroiteProfondeurVariable;
+package awele.bot.competitor.MattisSaIO2;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -66,10 +66,10 @@ public abstract class MinMaxNode
 	                    else
 	                    {
 	                        /* Si la profondeur maximale n'est pas atteinte */
-	                        if (depth < 10 - (board.getNbSeeds() / 10))
+	                        if (depth < maxDepth)
 	                        {
 	                            /* On construit le noeud suivant */
-	                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, poids, realDepth);
+	                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta, poids, realDepth+1);
 	                            /* On recupère l'evaluation du noeud fils */
 	                            this.decision [i] = child.getEvaluation ();
 	                        }

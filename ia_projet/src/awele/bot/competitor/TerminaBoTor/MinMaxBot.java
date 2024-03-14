@@ -1,4 +1,4 @@
-package awele.bot.competitor.AB_MattisDroiteProfondeurVariable;
+package awele.bot.competitor.TerminaBoTor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,14 +18,13 @@ import awele.core.InvalidBotException;
 public class MinMaxBot extends CompetitorBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 8;
     private static final int TIME_LEARN_GEN = 50;
     private static final double TAUX_MUTATION = 0.2;
 	private static final int POP_SIZE = 40;
 	private static final int MIN_WEIGHT = -20;
 	private static final int MAX_WEIGHT = 20;
 	private static final int NB_FIGHTERS = 5;
-	private static final int NB_MATCH = 2;
 	
     private int[]poids;
     private int realDepth;
@@ -36,8 +35,8 @@ public class MinMaxBot extends CompetitorBot
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MattisDroiteProfondeurVariable");
-        this.addAuthor ("Theo COLLET");
+        this.setBotName ("TerminaBoTor");
+        this.addAuthor ("BIGONI COLLET");
     }
     
     private MinMaxBot (int[] poids) throws InvalidBotException
@@ -60,16 +59,13 @@ public class MinMaxBot extends CompetitorBot
     @Override
     public void learn ()
     {
-    	System.out.println("Learn");
     	try {
 	    	long start = System.currentTimeMillis();
 	    	int nbGen = 0;
 	    	
-	    	Individu[] individus = new Individu[POP_SIZE];
+	    	Individu[] individus = new Individu[POP_SIZE]; // l'individu en 0 est le meilleur de la generation precedente
 
-	    	poids = new int[6];
-	    	poids[0] = poids[2] = poids[4] = 20;
-	    	poids[1] = poids[3] = poids[5] = -20;   	
+	    	poids = new int[] {11,-11,-5,9,-15,-19};	
 	    	individus[0] = new Individu(poids);
 	    	
 	    	for(int i = 1; i < POP_SIZE; i++) {
@@ -82,10 +78,10 @@ public class MinMaxBot extends CompetitorBot
 	    		System.out.println("Nouvelle Generation "+nbGen+" t="+(System.currentTimeMillis() - start)/1000f/60f+"min");
 	    		for(int i = 0; i < NB_FIGHTERS; i++) {
 	    			for(int j = 0; j < POP_SIZE; j++) {
+	    				if(System.currentTimeMillis() - start > (1000 * 60 * TIME_LEARN_GEN))break;
 	    				if(i!=j)//Un combat ne se fait pas sur le meme individu qui devrait finir sur une egalite
 	    				{ 
-	    					System.out.print("Debut de jeu "+i+" "+j);
-							Awele awele = new Awele (new MinMaxBot(individus[i].poids),new MinMaxBot(individus[j].poids));
+	    					Awele awele = new Awele (new MinMaxBot(individus[i].poids),new MinMaxBot(individus[j].poids));
 							awele.play();
 							if(awele.getWinner() == -1) {
 								individus[i].fitness += 100;
@@ -95,35 +91,43 @@ public class MinMaxBot extends CompetitorBot
 							} else {
 								individus[j].fitness += 200;
 							}
-							System.out.println(" Fin de jeu");
-	    				}
-	    				if(System.currentTimeMillis() - start > (1000 * 60 * TIME_LEARN_GEN))break;
+	    				}	
 	    			}
-	    			//TODO AJOUTER COMBAT DE BOSS
 	    		}
-	    		//TRI
-	    		Arrays.sort(individus);
-	    		//Verification du meilleur
-	    		if(individus[0].fitness < individus[1].fitness)individus[0] = individus[1];
-	    		//REPOPULATION
-	    		Individu[] nouvellePop = new Individu[POP_SIZE];
-	    		System.out.println(individus[0]);
-	    		for(int i = 1; i < POP_SIZE; i++) {
-	    			System.out.print(individus[i]);
-	    			nouvellePop[i] = new Individu(individus[random(0,POP_SIZE/2)],individus[random(0,POP_SIZE/2)]);
+	    		if(!(System.currentTimeMillis() - start > (1000 * 60 * TIME_LEARN_GEN))) {
+		    		//TRI
+		    		Individu m = individus[0];
+		    		Arrays.sort(individus);
+		    		//Verification du meilleur
+		    		if(!m.equals(individus[0])) {
+		    			Awele awele1 = new Awele (new MinMaxBot(m.poids),new MinMaxBot(individus[0].poids));
+		    			awele1.play();
+		    			if(awele1.getWinner() == 0) {
+							individus[0] = m;
+						} else if (awele1.getWinner() == 1) {
+							m = individus[0];
+						}
+		    		}
+		    		//REPOPULATION
+		    		Individu[] nouvellePop = new Individu[POP_SIZE];
+		    		System.out.println(individus[0]);
+		    		for(int i = 0; i < POP_SIZE/2; i++) {
+		    			System.out.print(individus[i]);
+		    			nouvellePop[i] = new Individu(individus[i],individus[random(0,POP_SIZE/2)]);
+		    			nouvellePop[i+POP_SIZE/2] = new Individu(individus[i],individus[random(0,POP_SIZE/2)]);
+		    		}
+		    		nouvellePop[0] = m;
+		    		individus = nouvellePop;
+		    		individus[0].fitness = 0;
+		    		nbGen++;
 	    		}
-	    		nouvellePop[0] = individus[0];
-	    		individus = nouvellePop;
-	    		individus[0].fitness = 0;
-	    		nbGen++;
 	    	}
 	    	System.out.println("Individu de reference :"+individus[0]+"\ntrouvé en "+nbGen+" generations");
 	    	this.poids = individus[0].poids;
     	
 		} catch (InvalidBotException e) {
 			e.printStackTrace();
-		}  	
-    	//poids = new int[] {11,-11,-5,9,-15,-19};
+		}
     }
 
     /**

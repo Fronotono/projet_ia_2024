@@ -1,82 +1,45 @@
 Memoire totale : 4,0 GiB
 Instanciation du bot "Random"
-4 classes ont ete trouvees
-class awele.bot.competitor.AB_MattisDroite.MinMaxBot
-class awele.bot.competitor.minmaxH4.MinMaxBot
-class awele.bot.competitor.AB_P8.MinMaxBot
-class awele.bot.competitor.AB_MattisDroiteProfondeurVariable.MinMaxBot
+2 classes ont ete trouvees
+class awele.bot.competitor.MattisSaIO2.MinMaxBot
+class awele.bot.competitor.MattisSaIO.MinMaxBot
 
-Bot 1/4
-Classe : awele.bot.competitor.AB_MattisDroite.MinMaxBot
-Instanciation du bot "MattisDroite"
-Nom du bot : MattisDroite
+Bot 1/2
+Classe : awele.bot.competitor.MattisSaIO2.MinMaxBot
+Instanciation du bot "MattisSaIO2"
+Nom du bot : MattisSaIO2
 Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.014
-Usage memoire : 4,3 KiB
-Usage memoire maximum : 4,0 MiB
+Duree d'une prise de decision : 00:00:00.091
+Usage memoire : 3,2 KiB
+Usage memoire maximum : 31,0 MiB
 
-Bot 2/4
-Classe : awele.bot.competitor.minmaxH4.MinMaxBot
-Instanciation du bot "MinMaxH4"
-Nom du bot : MinMaxH4
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.081
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 62,0 MiB
+Bot 2/2
+Classe : awele.bot.competitor.MattisSaIO.MinMaxBot
+Instanciation du bot "TerminaBoTor"
+Nom du bot : TerminaBoTor
+Temps d'apprentissage : 00:50:36.818
+Duree d'une prise de decision : 00:00:00.061
+Usage memoire : 2,6 KiB
+Usage memoire maximum : 63,2 MiB
 
-Bot 3/4
-Classe : awele.bot.competitor.AB_P8.MinMaxBot
-Instanciation du bot "AB_DS_P8"
-Nom du bot : AB_DS_P8
-Temps d'apprentissage : 00:00:00.000
-Duree d'une prise de decision : 00:00:00.043
-Usage memoire : 1,2 KiB
-Usage memoire maximum : 153,0 MiB
+2 bots ont ete instancies
+Duree du chargement : 00:50:40.456
+Memoire utilisee : 1,3 MiB
 
-Bot 4/4
-Classe : awele.bot.competitor.AB_MattisDroiteProfondeurVariable.MinMaxBot
-Instanciation du bot "MattisDroiteProfondeurVariable"
-Nom du bot : MattisDroiteProfondeurVariable
-Score : 0.3 - 2.7
-MattisDroiteProfondeurVariable a gagne
-Nombre de coups joues : 89.0 par match
-Duree : 00:00:14.531 par match
-Memoire utilisee : 1,5 MiB
+Que le championnat commence !
 
-Affrontement 4/6
-MinMaxH4 vs. AB_DS_P8
-Score : 1.5 - 1.5
-Égalite
-Nombre de coups joues : 102.05 par match
-Duree : 00:00:04.602 par match
-Memoire utilisee : 1,4 MiB
+Affrontement 1/1
+MattisSaIO2 vs. MattisSaIO
+Temps d'apprentissage : 00:05:08.827
+Duree d'une prise de decision : 00:00:00.064
+Usage memoire : 2,6 KiB
+Usage memoire maximum : 77,9 MiB
 
-Affrontement 5/6
-MinMaxH4 vs. MattisDroiteProfondeurVariable
-Score : 1.2 - 1.8
-MattisDroiteProfondeurVariable a gagne
-Nombre de coups joues : 98.35 par match
-Duree : 00:00:13.173 par match
-Memoire utilisee : 1,4 MiB
+2 bots ont ete instancies
+Duree du chargement : 00:05:13.704
+Memoire utilisee : 1,3 MiB
 
-Affrontement 6/6
-AB_DS_P8 vs. MattisDroiteProfondeurVariable
-Score : 0.3 - 2.7
-MattisDroiteProfondeurVariable a gagne
-Nombre de coups joues : 102.0 par match
-Duree : 00:00:17.077 par match
-Memoire utilisee : 1,5 MiB
+Que le championnat commence !
 
-Duree du championnat : 00:18:24.373
-
-Scores finaux :
-MattisDroite : 3.9
-MinMaxH4 : 4.2
-AB_DS_P8 : 2.7
-MattisDroiteProfondeurVariable : 7.2
-
-Rangs :
-1. MattisDroiteProfondeurVariable : 7.2
-2. MinMaxH4 : 4.2
-3. MattisDroite : 3.9
-4. AB_DS_P8 : 2.7
+Affrontement 1/1
+MattisSaIO2 vs. TerminaBoTor

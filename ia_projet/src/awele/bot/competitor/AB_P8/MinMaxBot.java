@@ -10,7 +10,7 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansche
  * Bot qui prend ses decisions selon le MinMax
  */
-public class MinMaxBot extends CompetitorBot
+public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 8;

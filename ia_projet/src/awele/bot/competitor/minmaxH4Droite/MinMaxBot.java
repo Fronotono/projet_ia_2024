@@ -1,4 +1,4 @@
-package awele.bot.competitor.minmaxH4;
+package awele.bot.competitor.minmaxH4Droite;
 
 import awele.bot.Bot;
 import awele.bot.CompetitorBot;
@@ -14,13 +14,14 @@ public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 9;
+    private int realDepth;
 	
     /**
      * @throws InvalidBotException
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MinMaxH4");
+        this.setBotName ("MinMaxH4Droite");
         this.addAuthor ("Lorine BIGONI");
     }
 
@@ -30,6 +31,7 @@ public class MinMaxBot extends Bot
     @Override
     public void initialize ()
     {
+    	realDepth=0;
     }
 
     /**
@@ -47,7 +49,8 @@ public class MinMaxBot extends Bot
     public double [] getDecision (Board board)
     {
         MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
-        return new MaxNode (board).getDecision ();
+        realDepth++;
+        return new MaxNode (board,realDepth).getDecision ();
     }
 
     /**

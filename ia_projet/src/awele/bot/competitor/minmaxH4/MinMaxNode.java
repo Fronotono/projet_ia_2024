@@ -105,14 +105,10 @@ public abstract class MinMaxNode
     }
 
     
-    int W1=4, W2=2, W3=2;
+    
     private int diffScore (Board board) throws InvalidBotException
     {
-        if(W1 == 0) {
-        	W1 = new Random().nextInt(MAX_WEIGHT)+1;
-        	W2 = new Random().nextInt(MAX_WEIGHT)+1;
-        	W3 = new Random().nextInt(MAX_WEIGHT)+1;
-        }
+    	int W1=4, W2=2, W3=2;
         int seeds_in_opponents_side = board.getOpponentSeeds();
         int seeds_in_my_side = board.getPlayerSeeds();
         int score_player = board.getScore (MinMaxNode.player);

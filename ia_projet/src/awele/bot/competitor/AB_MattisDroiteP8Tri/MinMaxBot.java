@@ -1,4 +1,4 @@
-package awele.bot.competitor.AB_MattisDroite;
+package awele.bot.competitor.AB_MattisDroiteP8Tri;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,17 +18,19 @@ import awele.core.InvalidBotException;
 public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 8;
     private static final int TIME_LEARN_GEN = 50;
     private static final double TAUX_MUTATION = 0.2;
 	private static final int POP_SIZE = 40;
-	private static final int MIN_WEIGHT = -20;
-	private static final int MAX_WEIGHT = 20;
+	private static final int MIN_WEIGHT = -10;
+	private static final int MAX_WEIGHT = 10;
 	private static final int NB_FIGHTERS = 5;
 	private static final int NB_MATCH = 2;
+	private static final int BUDGET = 450000;
 	
     private int[]poids;
     private int realDepth;
+    private int[] categories;
 	
 	
     /**
@@ -36,7 +38,7 @@ public class MinMaxBot extends Bot
      */
     public MinMaxBot () throws InvalidBotException
     {
-        this.setBotName ("MattisDroite");
+        this.setBotName ("MattisDroiteP8Tri");
         this.addAuthor ("Theo COLLET");
     }
     
@@ -79,7 +81,7 @@ public class MinMaxBot extends Bot
 	    	//competition
 	    	while(System.currentTimeMillis() - start < (1000 * 60 * TIME_LEARN_GEN))
 	    	{
-	    		System.out.println("Nouvelle Generation t="+(System.currentTimeMillis() - start)/1000f/60f+"min");
+	    		System.out.println("Nouvelle Generation "+nbGen+" t="+(System.currentTimeMillis() - start)/1000f/60f+"min");
 	    		for(int i = 0; i < NB_FIGHTERS; i++) {
 	    			for(int j = 0; j < POP_SIZE; j++) {
 	    				if(i!=j)//Un combat ne se fait pas sur le meme individu qui devrait finir sur une egalite
@@ -122,7 +124,8 @@ public class MinMaxBot extends Bot
     	
 		} catch (InvalidBotException e) {
 			e.printStackTrace();
-		} */   	
+		}  	*/
+    	//poids = new int[] {-4,-4,5,0,-5,11};
     	poids = new int[] {11,-11,-5,9,-15,-19};
     }
 
@@ -132,7 +135,7 @@ public class MinMaxBot extends Bot
     @Override
     public double [] getDecision (Board board)
     {
-        MinMaxNode.initialize(board, MAX_DEPTH);
+        MinMaxNode.initialize(board, MAX_DEPTH, 5);
         realDepth++;
         return new MaxNode (board,poids,realDepth).getDecision ();
         
